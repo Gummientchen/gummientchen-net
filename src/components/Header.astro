@@ -12,8 +12,25 @@
     background-repeat: no-repeat;
     background-position: center 5%;
     background-size: cover;
-    background-image: svg-load("../images/logo.svg");
+    background-color: var(--color-gray-700);
+    background-image: svg-load("../images/logo.svg"),
+      linear-gradient(
+        0deg,
+        hsla(0, 0%, 0%, 0.2) 5%,
+        hsla(0, 0%, 100%, 0.5) 100%
+      );
     height: clamp(15rem, 50vw, 60rem);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    header {
+      background-color: var(--color-gray-400);
+      background-blend-mode: color-burn;
+    }
+
+    h1 {
+      --header-font-color: var(--color-gray-100);
+    }
   }
 
   h1 {
@@ -21,7 +38,7 @@
     font-size: clamp(1.8rem, 5vw, 5rem);
     padding-block: 1em;
     padding-inline: 1em;
-    color: #677;
+    color: var(--header-font-color);
     font-weight: 600;
     line-height: 1;
     margin: 0;

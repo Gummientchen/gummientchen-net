@@ -37,11 +37,58 @@ const { title, description } = Astro.props;
       <Footer />
     </div>
     <style is:global>
+      :root {
+        --main-bg-color: hsl(0, 0%, 100%);
+
+        --color-gray-100: hsl(0, 0%, 0%);
+        --color-gray-200: hsl(0, 0%, 15%);
+        --color-gray-300: hsl(0, 0%, 35%);
+        --color-gray-400: hsl(0, 0%, 50%);
+        --color-gray-500: hsl(0, 0%, 65%);
+        --color-gray-600: hsl(0, 0%, 85%);
+        --color-gray-700: hsl(0, 0%, 100%);
+
+        --header-font-color: hsl(180, 8%, 43%);
+        --rig-background-color: hsl(180, 13%, 23%);
+        --rig-font-color: var(--color-gray-700);
+
+        --link-font-color: hsl(193, 82%, 22%);
+        --link-hover-font-color: hsl(193, 82%, 37%);
+        --link-hover-background-color: hsla(0, 0%, 62%, 0.2);
+
+        --button-bright-color: var(--color-gray-700);
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --main-bg-color: hsl(0, 0%, 10%);
+
+          --color-gray-700: hsl(0, 0%, 5%);
+          --color-gray-600: hsl(0, 0%, 15%);
+          --color-gray-500: hsl(0, 0%, 35%);
+          --color-gray-400: hsl(0, 0%, 50%);
+          --color-gray-300: hsl(0, 0%, 70%);
+          --color-gray-200: hsl(0, 0%, 80%);
+          --color-gray-100: hsl(0, 0%, 90%);
+
+          --header-font-color: hsl(180, 8%, 43%);
+          --rig-background-color: hsl(0, 0%, 5%);
+          --rig-font-color: var(--color-gray-100);
+
+          --link-font-color: hsl(193, 82%, 37%);
+          --link-hover-font-color: hsl(193, 82%, 37%);
+          --link-hover-background-color: hsla(0, 0%, 62%, 0.2);
+
+          --button-bright-color: var(--color-gray-100);
+        }
+      }
+
       html,
       body {
         margin: 0;
         font-size: 16px;
         font-family: "Roboto", "Source Sans Pro", Arial, sans-serif;
+        background-color: var(--main-bg-color);
       }
       .container {
         display: grid;
@@ -52,17 +99,17 @@ const { title, description } = Astro.props;
       }
 
       a {
-        color: #0a5064;
+        color: var(--link-font-color);
       }
       a:hover {
-        color: #18a;
+        color: var(--link-hover-font-color);
       }
       a.button {
         text-decoration: none;
         margin: 0 10px 10px;
         text-transform: uppercase;
-        color: #0a5064;
-        fill: #0a5064;
+        color: var(--link-font-color);
+        fill: var(--link-font-color);
         border-radius: 2px;
         height: 2em;
         min-width: 60px;
@@ -77,9 +124,9 @@ const { title, description } = Astro.props;
         display: inline-block;
       }
       a.button:hover {
-        color: #18a;
-        fill: #18a;
-        background: rgba(158, 158, 158, 0.2);
+        color: var(--link-hover-font-color);
+        fill: var(--link-hover-font-color);
+        background: var(--link-hover-background-color);
       }
 
       @media (min-width: 66em) {

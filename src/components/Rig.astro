@@ -29,12 +29,12 @@ const { default: arrow } = await import("../images/arrow-right.svg?raw");
   }
 
   a.button.bright {
-    color: #fff;
-    fill: #fff;
+    color: var(--button-bright-color);
+    fill: var(--button-bright-color);
   }
   section {
-    background-color: #344343;
-    color: #fff;
+    background-color: var(--rig-background-color);
+    color: var(--rig-font-color);
     font-weight: 300;
     padding: 0 1em;
     padding-block: 1em;
@@ -45,8 +45,8 @@ const { default: arrow } = await import("../images/arrow-right.svg?raw");
     font-weight: 300;
   }
   section a {
-    color: #18a;
-    fill: #18a;
+    color: var(--link-hover-font-color);
+    fill: var(--link-hover-font-color);
     margin: 2em 0;
   }
 
