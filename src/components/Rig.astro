@@ -1,0 +1,74 @@
+---
+export interface Props {
+  href: string;
+}
+
+const { href } = Astro.props;
+const { default: arrow } = await import("../images/arrow-right.svg?raw");
+---
+
+<section>
+  <div>
+    <h2>Rig.</h2>
+    <table>
+      <tbody>
+        <slot />
+      </tbody>
+    </table>
+    <a class="button bright" target="_blank" rel="noopener" href={href}
+      >full specs
+      <span set:html={arrow}></span>
+    </a>
+  </div>
+</section>
+
+<style>
+  a.button {
+    margin-block: 1em;
+    margin-inline: 0;
+  }
+
+  a.button.bright {
+    color: #fff;
+    fill: #fff;
+  }
+  section {
+    background-color: #344343;
+    color: #fff;
+    font-weight: 300;
+    padding: 0 1em;
+    padding-block: 1em;
+  }
+  section h2 {
+    font-size: 45px;
+    line-height: 41px;
+    font-weight: 300;
+  }
+  section a {
+    color: #18a;
+    fill: #18a;
+    margin: 2em 0;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  @media (min-width: 66rem) {
+    section {
+      grid-column: 1 / span 3;
+      display: grid;
+      grid-template-columns: 1fr 50rem 1fr;
+      padding: 0;
+    }
+    section div {
+      grid-area: 1/2;
+    }
+  }
+
+  @media (min-width: 87rem) {
+    section {
+      grid-template-columns: 1fr 80rem 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,112 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SectionGrid from '../components/SectionGrid.astro';
+import Rig from '../components/Rig.astro';
+import RigEntry from '../components/RigEntry.astro';
+import Card from '../components/Card.astro';
+---
+
+<Layout title="Gummientchen" description="Gummientchen, they also wanna play!">
+  <SectionGrid title="Gamertags">
+    <Card
+      service="Steam"
+      gamertag="Gummientchen"
+      description="Praise Lord Gaben"
+      svg="steam"
+      buttonhref="http://steamcommunity.com/id/Gummientchen/"
+    />
+    <Card
+      service="GOG.com"
+      gamertag="Gummientchen_"
+      description="The Defensive Regulatory Magicon must be destroyed!"
+      svg="gog"
+      buttonhref="https://www.gog.com/u/Gummientchen_"
+    />
+    <Card
+      service="Xbox Live"
+      gamertag="Gummientchen"
+      description="One Xbox One X Box"
+      svg="xbox"
+      buttonhref="https://account.xbox.com/en-us/profile?gamertag=Gummientchen"
+    />
+    <Card
+      service="EA"
+      gamertag="Gummientchen_ch"
+      description="They will spy on you! :P"
+      svg="ea"
+    />
+    <Card
+      service="Uplay"
+      gamertag="Gummientchen_"
+      description="These games are never finished! ;)"
+      svg="uplay"
+    />
+    <Card
+      service="Nintendo"
+      gamertag="Gummientchen_ch"
+      description="0619 - 8903 - 4604"
+      svg="nintendo"
+    />
+    <Card
+      service="Battle.net"
+      gamertag="Gummientchen#21348"
+      description="Leeroy Jenkins!!"
+      svg="battlenet"
+    />
+    <Card
+      service="Riot"
+      gamertag="GummientchenCH#1337"
+      description="So many Wifus!"
+      svg="riot"
+      buttonhref="https://tracker.gg/valorant/profile/riot/GummientchenCH%231337/overview"
+    />
+  </SectionGrid>
+
+  <SectionGrid title="Social">
+    <Card
+      service="YouTube"
+      gamertag="Gummientchen"
+      description="DRAMA!!!"
+      svg="youtube"
+      buttonhref="https://www.youtube.com/user/steff999"
+    />
+    <Card
+      service="Twitch"
+      gamertag="Gummientchen"
+      description="Only male nipples allowed!"
+      svg="twitch"
+      buttonhref="https://www.twitch.tv/gummientchen"
+    />
+    <Card
+      service="Twitter"
+      gamertag="Gummientchen_"
+      description="#Hashtag"
+      svg="twitter"
+      buttonhref="https://twitter.com/Gummientchen_"
+    />
+  </SectionGrid>
+
+  <Rig href="https://pcpartpicker.com/user/Nycxin/saved/#view=nZb6rH">
+    <RigEntry component="CPU"
+      >AMD - Ryzen 9 3950X 4.7Ghz Sixteen-Core Processor</RigEntry
+    >
+    <RigEntry component="GPU"
+      >Asus - TUF Gaming GeForce RTX® 4090 OC Edition 24GB GDDR6X</RigEntry
+    >
+    <RigEntry component="RAM"
+      >Corsair - Vengeance LPX Black 32GB (2 x 16GB) DDR4-3600 Memory</RigEntry
+    >
+    <RigEntry component="Motherboard"
+      >Asus - Rog Strix X570-E Gaming ATX AM4 Motherboard</RigEntry
+    >
+    <RigEntry component="Storage"
+      >Samsung - 980 PRO NVMe M.2 2280 1 TB Solid State Drive<br />Samsung - 860
+      QVO 2TB 2.5" Solid State Drive</RigEntry
+    >
+    <RigEntry component="CPU Cooler">Noctua - NH-D15 SE-AM4 CPU Cooler</RigEntry
+    >
+    <RigEntry component="Case">Fractal - Meshify S2 Black - Dark TG</RigEntry>
+    <RigEntry component="Power Supply">Seasonic - Prime Platinum 1300W</RigEntry
+    >
+  </Rig>
+</Layout>

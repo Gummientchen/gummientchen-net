@@ -1,0 +1,8 @@
+<svg viewBox='0 0 512 288'>
+    <path d='M0 0h512v288H0'
+          fill='#639' />
+    <path d='M291 204H260l-21 21h-21V204H178V91l11-28h145v99M320 155V77h-117v102h32v21L256 179h39'
+          fill='#fff' />
+    <path d='M281 105v42h14v-42zm-39 42h14v-42h-14'
+          fill='#fff' />
+</svg>
