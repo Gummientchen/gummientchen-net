@@ -1,15 +1,16 @@
 ---
 export interface Props {
+  title: string;
   href: string;
 }
 
-const { href } = Astro.props;
-const { default: arrow } = await import("../images/arrow-right.svg?raw");
+const { title = 'Rig', href } = Astro.props;
+const { default: arrow } = await import('../images/arrow-right.svg?raw');
 ---
 
 <section>
   <div>
-    <h2>Rig.</h2>
+    <h2>{title}.</h2>
     <table>
       <tbody>
         <slot />
