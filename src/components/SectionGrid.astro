@@ -35,6 +35,12 @@ const { title } = Astro.props;
     margin-top: 0;
   }
 
+  @media (min-width: 37rem) {
+    section .cards {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
   @media (min-width: 66rem) {
     section {
       grid-column: 1 / span 3;
@@ -51,15 +57,7 @@ const { title } = Astro.props;
     section {
       grid-template-columns: 1fr 80rem 1fr;
     }
-  }
 
-  @media (min-width: 37rem) {
-    section .cards {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-
-  @media (min-width: 87rem) {
     section .cards {
       grid-template-columns: 1fr 1fr 1fr;
     }
