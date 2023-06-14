@@ -7,17 +7,22 @@ const { title } = Astro.props;
 ---
 
 <section>
-  <h2>{title}.</h2>
-  <div>
-    <slot />
+  <div class="wrapper">
+    <h2>{title}.</h2>
+    <div class="cards">
+      <slot />
+    </div>
   </div>
 </section>
 
 <style>
   section {
     padding: 0 1em;
+    background-color: var(--main-bg-color);
+    z-index: 1;
   }
-  section div {
+
+  section .cards {
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 2em;
@@ -29,21 +34,33 @@ const { title } = Astro.props;
     line-height: 45px;
     margin-top: 0;
   }
-  @media (min-width: 37rem) {
-    section div {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
 
   @media (min-width: 66rem) {
     section {
-      grid-column: 2 / span 1;
+      grid-column: 1 / span 3;
+      display: grid;
+      grid-template-columns: 1fr 50rem 1fr;
       padding: 0;
+    }
+    .wrapper {
+      grid-area: 1/2;
     }
   }
 
   @media (min-width: 87rem) {
-    section div {
+    section {
+      grid-template-columns: 1fr 80rem 1fr;
+    }
+  }
+
+  @media (min-width: 37rem) {
+    section .cards {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (min-width: 87rem) {
+    section .cards {
       grid-template-columns: 1fr 1fr 1fr;
     }
   }

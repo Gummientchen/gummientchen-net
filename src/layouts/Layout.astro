@@ -36,6 +36,24 @@ const { title, description } = Astro.props;
       <slot />
       <Footer />
     </div>
+    <script>
+      window.addEventListener(
+        "scroll",
+        () => {
+          var percentage =
+            window.pageYOffset / document.querySelector("header").offsetHeight;
+
+          if (percentage > 0.99999) {
+            percentage = 0.99999;
+          }
+
+          document.body.style.setProperty("--scroll", percentage);
+
+          console.log("--scroll", percentage);
+        },
+        false
+      );
+    </script>
     <style is:global>
       :root {
         --main-bg-color: hsl(0, 0%, 100%);
@@ -94,8 +112,16 @@ const { title, description } = Astro.props;
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: auto;
-        grid-gap: 3em 0;
+        /* grid-gap: 3em 0; */
         padding-bottom: 3em;
+      }
+
+      .container > * + * {
+        padding: 2rem 0;
+      }
+
+      .container section:first-of-type {
+        padding-top: 5rem;
       }
 
       a {

@@ -4,8 +4,8 @@ export interface Props {
   href: string;
 }
 
-const { title = 'Rig', href } = Astro.props;
-const { default: arrow } = await import('../images/arrow-right.svg?raw');
+const { title = "Rig", href } = Astro.props;
+const { default: arrow } = await import("../images/arrow-right.svg?raw");
 ---
 
 <section>
@@ -61,6 +61,7 @@ const { default: arrow } = await import('../images/arrow-right.svg?raw');
       display: grid;
       grid-template-columns: 1fr 50rem 1fr;
       padding: 0;
+      z-index: 1;
     }
     section div {
       grid-area: 1/2;
