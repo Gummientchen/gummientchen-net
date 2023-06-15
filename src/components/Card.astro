@@ -1,13 +1,19 @@
 ---
 export interface Props {
   service: string;
-  gamertag: string;
-  description: string;
+  gamertag?: string;
+  description?: string;
   svg: string;
   buttonhref?: string;
 }
 
-const { service, gamertag, description, svg, buttonhref = false } = Astro.props;
+const {
+  service,
+  gamertag = false,
+  description = false,
+  svg,
+  buttonhref = false,
+} = Astro.props;
 
 // import fs from 'node:fs/promises';
 
@@ -20,8 +26,12 @@ const { default: arrow } = await import("../images/arrow-right.svg?raw");
 
 <div class="card">
   <div set:html={svgtext}></div>
-  <h2>{service}: {gamertag}</h2>
-  <p>{description}</p>
+  <h2>
+    {service}{gamertag && <span>: {gamertag}</span>}
+  </h2>
+  <p>
+    {description && <span>{description}</span>}
+  </p>
   {
     buttonhref && (
       <a class="button" target="_blank" rel="noopener" href={buttonhref}>
