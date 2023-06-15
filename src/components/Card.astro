@@ -5,6 +5,7 @@ export interface Props {
   description?: string;
   svg: string;
   buttonhref?: string;
+  buttonsuffix?: string;
 }
 
 const {
@@ -13,6 +14,7 @@ const {
   description = false,
   svg,
   buttonhref = false,
+  buttonsuffix = "Profile",
 } = Astro.props;
 
 // import fs from 'node:fs/promises';
@@ -35,7 +37,7 @@ const { default: arrow } = await import("../images/arrow-right.svg?raw");
   {
     buttonhref && (
       <a class="button" target="_blank" rel="noopener" href={buttonhref}>
-        {service} Profile
+        {service} {buttonsuffix}
         <span set:html={arrow} />
       </a>
     )
