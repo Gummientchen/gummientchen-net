@@ -1,10 +1,15 @@
 ---
+export interface Props {
+  heading: string;
+  subheading: string;
+}
+
+const { heading, subheading } = Astro.props;
 ---
 
 <header id="header">
-  <h1>
-    <slot />
-  </h1>
+  <h1>{heading}</h1>
+  <h2>{subheading}</h2>
 </header>
 
 <style>
@@ -19,7 +24,7 @@
         var(--main-bg-color) 5%,
         hsla(0, 0%, 100%, 0.5) 100%
       );
-    height: clamp(20rem, 50vw, 50rem);
+    height: clamp(20rem, 50vw, 70rem);
 
     position: sticky;
     top: 0;
@@ -45,20 +50,35 @@
       top: 0;
     }
 
-    h1 {
+    h1,
+    h2 {
       --header-font-color: var(--color-gray-100);
     }
   }
 
-  h1 {
+  h1,
+  h2 {
     text-align: center;
-    font-size: clamp(1.8rem, 5vw, 5rem);
-    padding-block: 1em;
+    margin: 0;
+  }
+
+  h1 {
+    font-size: clamp(1.8rem, 4vw, 8rem);
+    padding-block-start: 1.5em;
+    padding-block-end: 0.25em;
     padding-inline: 1em;
     color: var(--header-font-color);
     font-weight: 600;
     line-height: 1.2;
-    margin: 0;
+  }
+
+  h2 {
+    font-size: clamp(1.2rem, 3vw, 5rem);
+    padding-block-end: 1em;
+    padding-inline: 1em;
+    color: var(--header-font-color);
+    font-weight: 500;
+    line-height: 1.2;
   }
 
   @media (min-width: 15rem) {
@@ -71,6 +91,10 @@
     header {
       background-position: center 45%;
     }
+
+    h1 {
+      padding-block-start: 1em;
+    }
   }
   @media (min-width: 66rem) {
     header {
@@ -78,6 +102,10 @@
       overflow: hidden;
       -webkit-box-sizing: border-box;
       box-sizing: border-box;
+    }
+
+    h1 {
+      padding-block-start: 0.75em;
     }
   }
 </style>

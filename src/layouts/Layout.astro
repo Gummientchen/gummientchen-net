@@ -5,9 +5,11 @@ import Footer from "../components/Footer.astro";
 export interface Props {
   title: string;
   description: string;
+  heading: string;
+  subheading: string;
 }
 
-const { title, description } = Astro.props;
+const { title, description, heading, subheading } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -32,8 +34,7 @@ const { title, description } = Astro.props;
   </head>
   <body>
     <div class="container">
-      <Header>Gummientchen: Igniting Gaming Passion, One Click at a Time</Header
-      >
+      <Header heading={heading} subheading={subheading} />
       <slot />
       <Footer />
     </div>
