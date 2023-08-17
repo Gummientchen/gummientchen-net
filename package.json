@@ -1,7 +1,7 @@
 {
   "name": "@gummientchen/gamertags",
   "type": "module",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "astro dev --host",
@@ -11,9 +11,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^1.6.0",
-    "astro-compress": "^1.1.1",
-    "autoprefixer": "^10.4.13",
-    "postcss-inline-svg": "^5.0.0"
+    "astro": "^2.10.9",
+    "astro-compress": "^2.0.12",
+    "autoprefixer": "^10.4.15",
+    "postcss-inline-svg": "^6.0.0"
   }
 }
