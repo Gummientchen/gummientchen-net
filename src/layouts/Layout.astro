@@ -2,6 +2,12 @@
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
+const appleTouchIconUrl = new URL("/apple-touch-icon.png", Astro.url);
+const favicon32Url = new URL("/favicon-32x32.png", Astro.url);
+const favicon16Url = new URL("/favicon-16x16.png", Astro.url);
+const manifestUrl = new URL("/manifest.json", Astro.url);
+const maskIconUrl = new URL("/safari-pinned-tab.svg", Astro.url);
+
 export interface Props {
   title: string;
   description: string;
@@ -22,12 +28,12 @@ const { title, description, heading, subheading } = Astro.props;
       name="viewport"
       content="width=device-width, initial-scale=1.0, minimum-scale=1.0"
     />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href={appleTouchIconUrl} />
+    <link rel="icon" type="image/png" sizes="32x32" href={favicon32Url} />
+    <link rel="icon" type="image/png" sizes="16x16" href={favicon16Url} />
     <meta name="generator" content={Astro.generator} />
-    <link rel="manifest" href="/manifest.json" />
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+    <link rel="manifest" href={manifestUrl} />
+    <link rel="mask-icon" href={maskIconUrl} color="#5bbad5" />
     <meta name="theme-color" content="#fff" />
 
     <title>{title}</title>
