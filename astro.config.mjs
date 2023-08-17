@@ -1,7 +1,9 @@
 import { defineConfig } from "astro/config";
 
-// https://astro.build/config
 import compress from "astro-compress";
+
+// https://astro.build/config
+import image from "@astrojs/image";
 
 // https://astro.build/config
 export default defineConfig({
@@ -10,5 +12,10 @@ export default defineConfig({
   experimental: {
     viewTransitions: true,
   },
-  integrations: [compress()],
+  integrations: [
+    image(),
+    compress({
+      Image: false,
+    }),
+  ],
 });

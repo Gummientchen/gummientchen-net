@@ -1,0 +1,109 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import HeroImage from "../../components/HeroImage.astro";
+import Description from "../../components/Description.astro";
+
+import { Image, Picture } from "@astrojs/image/components";
+
+import image1 from "@assets/games/valorant/picture1.jpg";
+import image2 from "@assets/games/valorant/picture2.jpg";
+---
+
+<!-- "https://tracker.gg/valorant/profile/riot/GummientchenCH%231337/overview?playlist=unrated&season=all" -->
+<Layout
+  title="Gummientchen"
+  description="Join Gummientchen on a gaming odyssey like no other. From dominating battlefields to unraveling epic quests, Gummientchen explores pixel realms, leaving no virtual stone unturned."
+  heading="Gummientchen"
+  subheading="Conquering Virtually Everything"
+>
+  <HeroImage service="Valorant" svg="valorant" />
+  <Description>
+    <p>
+      Step into a world on the brink of chaos, where the fate of nations hangs
+      in the balance and tactical brilliance is your only ally. Welcome to
+      Valorant, the heart-pounding free-to-play first-person tactical hero
+      shooter that redefines the genre. Developed and published by Riot Games,
+      the masterminds behind League of Legends, this game is not just a
+      shooter—it's a symphony of strategy, firepower, and heart-pounding
+      suspense.
+    </p>
+
+    <p>
+      In a near-future world torn by global conflicts, you are one of the elite
+      Agents, a team of extraordinary individuals hailing from diverse
+      backgrounds and cultures across the globe. These heroes are forged in the
+      crucible of battle, wielding unique abilities and unwavering determination
+      to tip the scales in a war that could reshape the world.
+    </p>
+
+    <Picture
+      src={image1}
+      widths={[400, 800, 1200, 1800, 2500]}
+      sizes="(min-width: 87em) 80em, (min-width: 66em) 50em, (max-width: 66em) 100vw"
+      alt="Valorant agents in their hero poses in front of a big red Valorant logo"
+    />
+
+    <p>
+      Prepare for the ultimate showdown as you and your team face off in
+      high-stakes battles that demand precision, teamwork, and strategic
+      thinking. Choose your Agent from a roster of 22 diverse characters, each
+      with their own distinct abilities and playstyles. Embrace the role of
+      Duelists, brave warriors who carve a path through enemy lines; Sentinels,
+      steadfast defenders who protect their comrades at all costs; Initiators,
+      master tacticians who open the door for attack; and Controllers, strategic
+      orchestrators who manipulate the battlefield to their advantage.
+    </p>
+
+    <p>
+      In the heart of battle, every round is a dance of danger and cunning.
+      Choose your weaponry wisely from a vast arsenal of secondary guns, primary
+      guns, and even specialized abilities. Craft your strategy, adjust your
+      tactics, and adapt to the ever-changing battlefield as you engage in a
+      relentless game of cat and mouse with your opponents. Utilize your unique
+      abilities to surprise, outmaneuver, and outsmart your foes—every kill,
+      every move, every second counts.
+    </p>
+
+    <p>
+      Whether you're defusing bombs, protecting objectives, or gunning down
+      enemies, Valorant ensures that the thrill never falters. Engage in
+      pulse-pounding team battles, with each team comprised of five elite
+      Agents. The stakes are high, the tension is palpable, and the outcome is
+      uncertain until the final bullet is fired.
+    </p>
+
+    <Picture
+      src={image2}
+      widths={[400, 800, 1200, 1800, 2500]}
+      sizes="(min-width: 87em) 80em, (min-width: 66em) 50em, (max-width: 66em) 100vw"
+      alt="A typical play scene of Valorant"
+    />
+
+    <p>
+      And it doesn't end there. Immerse yourself in a variety of heart-racing
+      game modes, from the intense standard Unrated mode where victory is a
+      matter of life and death, to the rapid-fire action of Spike Rush, the
+      strategic intensity of Swiftplay, and the bone-chilling chaos of
+      Deathmatch and Team Deathmatch. You'll also experience Escalation, where
+      you'll ascend through an arsenal of weapons, and the mind-bending
+      challenge of Replication, where every Agent has the same abilities for
+      ultimate fairness.
+    </p>
+
+    <p>
+      But that's not all. Valorant also delivers a stunning visual experience,
+      powered by Unreal Engine 4. The maps are meticulously crafted to provide
+      intricate tactical opportunities and breathtaking environments. Engage in
+      fast-paced combat across multiple arenas, from urban landscapes to secret
+      laboratories, each with their own unique challenges.
+    </p>
+
+    <p>
+      Are you ready to answer the call of duty and become the legend you were
+      destined to be? Join the battle in Valorant and let your tactical prowess
+      shine on the global stage. Dominate the battlefield, secure your
+      objectives, and prove your worth as a true Agent of change. The world
+      awaits your heroism.
+    </p>
+  </Description>
+</Layout>

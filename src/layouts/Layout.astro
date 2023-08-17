@@ -132,6 +132,7 @@ const { title, description, heading, subheading } = Astro.props;
         grid-template-rows: auto;
         /* grid-gap: 3em 0; */
         padding-bottom: 3em;
+        position: relative;
       }
 
       .container > * + * {
@@ -182,6 +183,13 @@ const { title, description, heading, subheading } = Astro.props;
         .container {
           grid-template-columns: 1fr 80em 1fr;
         }
+      }
+
+      Image,
+      Picture,
+      picture,
+      img {
+        max-width: 100%;
       }
     </style>
   </body>

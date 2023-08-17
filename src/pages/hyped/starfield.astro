@@ -1,9 +1,13 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import SectionGrid from "../../components/SectionGrid.astro";
-import Rig from "../../components/Rig.astro";
-import RigEntry from "../../components/RigEntry.astro";
-import Card from "../../components/Card.astro";
+import HeroImage from "../../components/HeroImage.astro";
+import Description from "../../components/Description.astro";
+
+import { Image, Picture } from "@astrojs/image/components";
+
+import image1 from "@assets/hyped/starfield/schdmh.jpg";
+import image2 from "@assets/hyped/starfield/scmlzk.jpg";
+import image3 from "@assets/hyped/starfield/schdmk.jpg";
 ---
 
 <Layout
@@ -12,39 +16,112 @@ import Card from "../../components/Card.astro";
   heading="Gummientchen"
   subheading="Conquering Virtually Everything"
 >
-  <Rig
-    title="Rig"
-    href="https://pcpartpicker.com/user/Nycxin/saved/#view=Bm8rGX"
-  >
-    <RigEntry component="CPU">AMD - Ryzen 9 7950X3D 5.7Ghz</RigEntry>
-    <RigEntry component="GPU"
-      >Asus - TUF Gaming GeForce RTX® 4090 OC Edition 24GB GDDR6X</RigEntry
-    >
-    <RigEntry component="RAM"
-      >G.Skill - Trident Z5 Neo 64GB (2 x 32GB) DDR5-6000 CL30</RigEntry
-    >
-    <RigEntry component="Motherboard"
-      >Asus - ROG Strix X670E-E Gaming Wifi AM5</RigEntry
-    >
-    <RigEntry component="Storage">
-      Samsung - 980 PRO NVMe 1TB M.2 2280<br />
-      Samsung - 860QVO 2TB 2.5"<br />
-      WD Black - SN850X Gaming NVMe 4TB M.2 2280
-    </RigEntry>
-    <RigEntry component="CPU Cooler"
-      >Corsair - iCUE H150i Elite Capellix XT w/ LCD Upgrade</RigEntry
-    >
-    <RigEntry component="Case">Fractal - Meshify S2 Black - Dark TG</RigEntry>
-    <RigEntry component="Power Supply">Seasonic - Prime Platinum 1300W</RigEntry
-    >
-    <RigEntry component="Main Display">BenQ - 34" Ultrawide EX3415R</RigEntry>
-    <RigEntry component="Secondary Displays">
-      Samsung - LS34J550WQUXEN<br />
-      DELL - U2722D
-    </RigEntry>
-    <RigEntry component="Mouse">
-      Logitech - G Pro X Superlight Wireless
-    </RigEntry>
-    <RigEntry component="Keyboard">Ducky - One 2 (MX Blue)</RigEntry>
-  </Rig>
+  <HeroImage service="Starfield" svg="starfield" />
+  <Description>
+    <p>
+      Embark on a cosmic odyssey that defies the bounds of imagination in
+      Starfield, the long-awaited opus from the visionary creators of The Elder
+      Scrolls V: Skyrim and Fallout 4, Bethesda Game Studios. After a
+      quarter-century of anticipation, the gaming world is about to bear witness
+      to the birth of a new universe that promises to redefine the very essence
+      of exploration and role-playing.
+    </p>
+
+    <p>
+      Set against the backdrop of the year 2330, where humanity has risen beyond
+      the confines of its cradle and ventured into the cosmos, Starfield
+      catapults you into the heart of a mesmerizing frontier, brimming with
+      untamed planets and hidden enigmas. You'll assume the mantle of a member
+      of Constellation, a last bastion of spacefaring explorers driven by an
+      unquenchable thirst for uncovering the universe's rarest artifacts.
+    </p>
+
+    <Picture
+      src={image1}
+      widths={[400, 800, 1200, 1800, 2500]}
+      sizes="((min-width: 66em) and (max-width: 87em)) 80em, (max-width: 66em) 100vw"
+      alt="A player looking out of his ships cockpit"
+    />
+
+    <p>
+      But here, in the inky void of the cosmos, you are the author of your own
+      saga. A sweeping narrative of your creation unfolds as you shape your
+      character's identity from scratch. Will you emerge as a battle-hardened
+      trailblazer, a cunning master of subterfuge, or perhaps a charismatic
+      diplomat weaving alliances amidst the stars? The choices are yours, and
+      they resonate through every pixel of this grand adventure.
+    </p>
+
+    <p>
+      Prepare to be beguiled as you traverse the starlit tapestry of more than
+      1000 planets, each a captivating realm waiting to be deciphered. In this
+      constellation of possibilities, bustling metropolises teem with life,
+      perilous bases house unimaginable secrets, and landscapes untouched by
+      humanity's footprints beckon your exploration. Characters rich with depth,
+      each possessing their own tales to tell, await your recruitment into their
+      orbits, intertwining destinies and igniting unforeseen alliances.
+    </p>
+
+    <Picture
+      src={image2}
+      widths={[400, 800, 1200, 1800, 2500]}
+      sizes="((min-width: 66em) and (max-width: 87em)) 80em, (max-width: 66em) 100vw"
+      alt="A good look at the main city"
+    />
+
+    <p>
+      Become the captain of your dreams, as you commandeer and pilot a ship of
+      boundless potential through the cosmic abyss. Customize your vessel's
+      visage, enhance its critical systems with formidable armaments, and
+      recruit crew members whose unique talents bestow distinct advantages. In
+      the darkness of space, dogfights bristle with tension, random missions
+      flare into existence, and the very act of boarding enemy ships becomes a
+      testament to your dominance.
+    </p>
+
+    <p>
+      The universe itself is your quarry, a treasure trove of resources, exotic
+      creatures, and ancient mysteries. Descend to planetary surfaces to unearth
+      the building blocks of survival, from sustenance to weaponry. Construct
+      outposts that hum with the industry of extraction, and forge intricate
+      cargo networks that funnel precious resources through the stars. Fuel
+      groundbreaking research endeavors with your amassed wealth, granting you
+      the keys to creation itself.
+    </p>
+
+    <p>
+      But be warned, as the void beyond Earth's embrace is not for the
+      faint-hearted. A finely tuned combat system arms you with the tools to
+      conquer adversity, from pulse-pounding gunplay to explosive demolitions.
+      Weapons transform into extensions of your will, with limitless
+      customization options catering to your preferred style of engagement. And
+      amid the chaos of zero-gravity skirmishes, you'll discover newfound
+      freedom of movement and tactics, reshaping the very nature of combat.
+    </p>
+
+    <Picture
+      src={image3}
+      widths={[400, 800, 1200, 1800, 2500]}
+      sizes="((min-width: 66em) and (max-width: 87em)) 80em, (max-width: 66em) 100vw"
+      alt="A sandwhich and a weapon on a table"
+    />
+
+    <p>
+      Brace yourself for a mature, immersive journey, where the lines between
+      reality and the unknown blur. With an unflinching glance into the darker
+      corners of human nature, Starfield envelopes you in a world marred by
+      violence, underscored by blood, entwined with suggestive themes,
+      punctuated by strong language, and fraught with the shadowy dance of
+      intoxicating substances.
+    </p>
+
+    <p>
+      As the countdown to September 6, 2023, draws near, humanity's destiny
+      within the cosmos inches ever closer. Starfield is a promise whispered in
+      the cosmic winds, a beckoning to the adventurers, the dreamers, and the
+      seekers of truth. Prepare to ascend to the stars, to write your story upon
+      the astral canvas, and to partake in the grandest odyssey ever woven by
+      Bethesda Game Studios.
+    </p>
+  </Description>
 </Layout>

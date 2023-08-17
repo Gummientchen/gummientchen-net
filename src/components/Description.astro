@@ -1,0 +1,38 @@
+---
+---
+
+<section>
+  <div class="wrapper">
+    <slot />
+  </div>
+</section>
+
+<style>
+  section {
+    padding: 0 1em;
+    background-color: var(--main-bg-color);
+    z-index: 1;
+    color: var(--color-gray-100);
+    font-size: 150%;
+    line-height: 1.75;
+    font-weight: 300;
+  }
+
+  @media (min-width: 66rem) {
+    section {
+      grid-column: 1 / span 3;
+      display: grid;
+      grid-template-columns: 1fr 50rem 1fr;
+      padding: 0;
+    }
+    .wrapper {
+      grid-area: 1/2;
+    }
+  }
+
+  @media (min-width: 87rem) {
+    section {
+      grid-template-columns: 1fr 80rem 1fr;
+    }
+  }
+</style>
