@@ -3,7 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import HeroImage from "../../components/HeroImage.astro";
 import Description from "../../components/Description.astro";
 
-import { Image, Picture } from "@astrojs/image/components";
+import DescriptionPicture from "../../components/DescriptionPicture.astro";
 
 import image1 from "@assets/hyped/starfield/schdmh.jpg";
 import image2 from "@assets/hyped/starfield/scmlzk.jpg";
@@ -11,7 +11,7 @@ import image3 from "@assets/hyped/starfield/schdmk.jpg";
 ---
 
 <Layout
-  title="Gummientchen"
+  title="Gummientchen - Starfield"
   description="Join Gummientchen on a gaming odyssey like no other. From dominating battlefields to unraveling epic quests, Gummientchen explores pixel realms, leaving no virtual stone unturned."
   heading="Gummientchen"
   subheading="Conquering Virtually Everything"
@@ -36,11 +36,9 @@ import image3 from "@assets/hyped/starfield/schdmk.jpg";
       unquenchable thirst for uncovering the universe's rarest artifacts.
     </p>
 
-    <Picture
+    <DescriptionPicture
       src={image1}
-      widths={[400, 800, 1200, 1800, 2500]}
-      sizes="((min-width: 66em) and (max-width: 87em)) 80em, (max-width: 66em) 100vw"
-      alt="A player looking out of his ships cockpit"
+      alt="A player looking out of his ships cockpit. Bethesda©"
     />
 
     <p>
@@ -62,11 +60,9 @@ import image3 from "@assets/hyped/starfield/schdmk.jpg";
       orbits, intertwining destinies and igniting unforeseen alliances.
     </p>
 
-    <Picture
+    <DescriptionPicture
       src={image2}
-      widths={[400, 800, 1200, 1800, 2500]}
-      sizes="((min-width: 66em) and (max-width: 87em)) 80em, (max-width: 66em) 100vw"
-      alt="A good look at the main city"
+      alt="A good look at the main city. Bethesda©"
     />
 
     <p>
@@ -99,11 +95,9 @@ import image3 from "@assets/hyped/starfield/schdmk.jpg";
       freedom of movement and tactics, reshaping the very nature of combat.
     </p>
 
-    <Picture
+    <DescriptionPicture
       src={image3}
-      widths={[400, 800, 1200, 1800, 2500]}
-      sizes="((min-width: 66em) and (max-width: 87em)) 80em, (max-width: 66em) 100vw"
-      alt="A sandwhich and a weapon on a table"
+      alt="A sandwhich and a weapon on a table. Bethesda©"
     />
 
     <p>
