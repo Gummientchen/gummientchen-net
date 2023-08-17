@@ -3,7 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import HeroImage from "../../components/HeroImage.astro";
 import Description from "../../components/Description.astro";
 
-import { Image, Picture } from "@astrojs/image/components";
+import DescriptionPicture from "../../components/DescriptionPicture.astro";
 
 import image1 from "@assets/games/valorant/picture1.jpg";
 import image2 from "@assets/games/valorant/picture2.jpg";
@@ -11,7 +11,7 @@ import image2 from "@assets/games/valorant/picture2.jpg";
 
 <!-- "https://tracker.gg/valorant/profile/riot/GummientchenCH%231337/overview?playlist=unrated&season=all" -->
 <Layout
-  title="Gummientchen"
+  title="Gummientchen - Valorant"
   description="Join Gummientchen on a gaming odyssey like no other. From dominating battlefields to unraveling epic quests, Gummientchen explores pixel realms, leaving no virtual stone unturned."
   heading="Gummientchen"
   subheading="Conquering Virtually Everything"
@@ -36,11 +36,9 @@ import image2 from "@assets/games/valorant/picture2.jpg";
       to tip the scales in a war that could reshape the world.
     </p>
 
-    <Picture
+    <DescriptionPicture
       src={image1}
-      widths={[400, 800, 1200, 1800, 2500]}
-      sizes="(min-width: 87em) 80em, (min-width: 66em) 50em, (max-width: 66em) 100vw"
-      alt="Valorant agents in their hero poses in front of a big red Valorant logo"
+      alt="Valorant agents in their hero poses in front of a big red Valorant logo. Riot Games©"
     />
 
     <p>
@@ -72,11 +70,9 @@ import image2 from "@assets/games/valorant/picture2.jpg";
       uncertain until the final bullet is fired.
     </p>
 
-    <Picture
+    <DescriptionPicture
       src={image2}
-      widths={[400, 800, 1200, 1800, 2500]}
-      sizes="(min-width: 87em) 80em, (min-width: 66em) 50em, (max-width: 66em) 100vw"
-      alt="A typical play scene of Valorant"
+      alt="A typical play scene of Valorant. Riot Games©"
     />
 
     <p>

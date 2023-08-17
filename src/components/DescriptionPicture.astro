@@ -1,0 +1,33 @@
+---
+import { Picture } from "@astrojs/image/components";
+
+const { src, alt, ...attrs } = Astro.props;
+---
+
+<figure>
+  <Picture
+    src={src}
+    widths={[400, 800, 1200, 1800, 2500]}
+    sizes="(min-width: 87em) 80em, (min-width: 66em) 50em, (max-width: 66em) 100vw"
+    alt="{alt}"
+    {...attrs}
+  />
+  <figcaption>{alt}</figcaption>
+</figure>
+
+<style>
+  figure {
+    padding: 0;
+    margin: 0;
+  }
+
+  figcaption {
+    font-size: 1rem;
+  }
+
+  img,
+  picture,
+  :global(img) {
+    max-width: 100%;
+  }
+</style>
