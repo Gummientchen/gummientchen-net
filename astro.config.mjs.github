@@ -5,7 +5,7 @@ import compress from "astro-compress";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://gummientchen.net/",
-  base: "/",
+  site: "https://gummientchen.github.io/",
+  base: "/gummientchen-net",
   integrations: [compress()],
 });

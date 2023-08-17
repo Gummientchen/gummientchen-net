@@ -20,6 +20,10 @@ jobs:
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v3
+      - name: Delete production config
+        run: rm astro.config.mjs
+      - name: Rename Github config
+        run: mv astro.config.mjs.github astro.config.mjs
       - name: Install, build, and upload your site
         uses: withastro/action@v0
         # with:
