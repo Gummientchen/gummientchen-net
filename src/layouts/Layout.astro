@@ -1,4 +1,6 @@
 ---
+import { ViewTransitions } from "astro:transitions";
+
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
@@ -37,10 +39,16 @@ const { title, description, heading, subheading } = Astro.props;
     <meta name="theme-color" content="#fff" />
 
     <title>{title}</title>
+
+    <ViewTransitions />
   </head>
   <body>
     <div class="container">
-      <Header heading={heading} subheading={subheading} />
+      <Header
+        heading={heading}
+        subheading={subheading}
+        transition:persist="header"
+      />
       <slot />
       <Footer />
     </div>

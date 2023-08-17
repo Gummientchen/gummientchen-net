@@ -7,5 +7,8 @@ import compress from "astro-compress";
 export default defineConfig({
   site: "https://gummientchen.net/",
   base: "/",
+  experimental: {
+    viewTransitions: true,
+  },
   integrations: [compress()],
 });
