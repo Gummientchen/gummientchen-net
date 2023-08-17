@@ -12,7 +12,7 @@ import Card from "../components/Card.astro";
   heading="Gummientchen"
   subheading="Conquering Virtually Everything"
 >
-  <SectionGrid title="Gamertags">
+  <SectionGrid title="Gamertags" transition:animate="slide">
     <Card
       service="Steam"
       gamertag="Gummientchen"
@@ -153,8 +153,8 @@ import Card from "../components/Card.astro";
       service="Valorant"
       description="Pew Pew Pew"
       svg="valorant"
-      buttonhref="https://tracker.gg/valorant/profile/riot/GummientchenCH%231337/overview?playlist=unrated&season=all"
-      buttonsuffix="Tracker"
+      buttonhref="games/valorant"
+      buttonsuffix="More Info"
     />
   </SectionGrid>
 
@@ -163,8 +163,8 @@ import Card from "../components/Card.astro";
       service="Starfield"
       description="Where's my Sandwich?!"
       svg="starfield"
-      buttonhref="https://store.steampowered.com/app/1716740/STARFIELD/"
-      buttonsuffix="Steam Page"
+      buttonhref="hyped/starfield"
+      buttonsuffix="More Info"
     />
   </SectionGrid>
 
@@ -173,26 +173,27 @@ import Card from "../components/Card.astro";
     href="https://pcpartpicker.com/user/Nycxin/saved/#view=Bm8rGX"
   >
     <RigEntry component="CPU">AMD - Ryzen 9 7950X3D 5.7Ghz</RigEntry>
-    <RigEntry component="GPU"
-      >Asus - TUF Gaming GeForce RTX® 4090 OC Edition 24GB GDDR6X</RigEntry
-    >
-    <RigEntry component="RAM"
-      >G.Skill - Trident Z5 Neo 64GB (2 x 32GB) DDR5-6000 CL30</RigEntry
-    >
-    <RigEntry component="Motherboard"
-      >Asus - ROG Strix X670E-E Gaming Wifi AM5</RigEntry
-    >
+    <RigEntry component="GPU">
+      Asus - TUF Gaming GeForce RTX® 4090 OC Edition 24GB GDDR6X
+    </RigEntry>
+    <RigEntry component="RAM">
+      G.Skill - Trident Z5 Neo 64GB (2 x 32GB) DDR5-6000 CL30
+    </RigEntry>
+    <RigEntry component="Motherboard">
+      Asus - ROG Strix X670E-E Gaming Wifi AM5
+    </RigEntry>
     <RigEntry component="Storage">
       Samsung - 980 PRO NVMe 1TB M.2 2280<br />
       Samsung - 860QVO 2TB 2.5"<br />
       WD Black - SN850X Gaming NVMe 4TB M.2 2280
     </RigEntry>
-    <RigEntry component="CPU Cooler"
-      >Corsair - iCUE H150i Elite Capellix XT w/ LCD Upgrade</RigEntry
-    >
+    <RigEntry component="CPU Cooler">
+      Corsair - iCUE H150i Elite Capellix XT w/ LCD Upgrade
+    </RigEntry>
     <RigEntry component="Case">Fractal - Meshify S2 Black - Dark TG</RigEntry>
-    <RigEntry component="Power Supply">Seasonic - Prime Platinum 1300W</RigEntry
-    >
+    <RigEntry component="Power Supply">
+      Seasonic - Prime Platinum 1300W
+    </RigEntry>
     <RigEntry component="Main Display">BenQ - 34" Ultrawide EX3415R</RigEntry>
     <RigEntry component="Secondary Displays">
       Samsung - LS34J550WQUXEN<br />

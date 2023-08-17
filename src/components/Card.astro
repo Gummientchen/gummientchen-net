@@ -6,6 +6,8 @@ export interface Props {
   svg: string;
   buttonhref?: string;
   buttonsuffix?: string;
+  buttontarget?: string;
+  buttonrel?: string;
 }
 
 const {
@@ -15,6 +17,8 @@ const {
   svg,
   buttonhref = false,
   buttonsuffix = "Profile",
+  buttontarget = "_self",
+  buttonrel = "noopener",
 } = Astro.props;
 
 // import fs from 'node:fs/promises';
@@ -27,7 +31,7 @@ const { default: arrow } = await import("../images/arrow-right.svg?raw");
 ---
 
 <div class="card">
-  <div set:html={svgtext}></div>
+  <div set:html={svgtext} transition:name={service} />
   <h2>
     {service}{gamertag && <span>: {gamertag}</span>}
   </h2>
@@ -36,7 +40,7 @@ const { default: arrow } = await import("../images/arrow-right.svg?raw");
   </p>
   {
     buttonhref && (
-      <a class="button" target="_blank" rel="noopener" href={buttonhref}>
+      <a class="button" target={buttontarget} rel={buttonrel} href={buttonhref}>
         {service} {buttonsuffix}
         <span set:html={arrow} />
       </a>

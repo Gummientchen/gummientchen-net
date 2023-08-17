@@ -1,0 +1,57 @@
+---
+export interface Props {
+  service: string;
+  svg: string;
+}
+
+const { service, svg } = Astro.props;
+const { default: svgtext } = await import(`../images/${svg}.svg?raw`);
+---
+
+<section>
+  <div class="wrapper">
+    <div class="heroImage" set:html={svgtext} transition:name={service} />
+  </div>
+</section>
+
+<style>
+  section {
+    padding: 0 1em;
+    background-color: var(--main-bg-color);
+    z-index: 1;
+
+    padding-block-end: 0 !important;
+  }
+
+  .wrapper {
+    position: relative;
+    aspect-ratio: 32/9;
+  }
+
+  .heroImage {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--color-gray-700);
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+
+  @media (min-width: 66rem) {
+    section {
+      grid-column: 1 / span 3;
+      display: grid;
+      grid-template-columns: 1fr 50rem 1fr;
+      padding: 0;
+    }
+    .wrapper {
+      grid-area: 1/2;
+    }
+  }
+
+  @media (min-width: 87rem) {
+    section {
+      grid-template-columns: 1fr 80rem 1fr;
+    }
+  }
+</style>
