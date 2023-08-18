@@ -20,12 +20,18 @@ const { heading, subheading } = Astro.props;
 
     background-color: var(--color-gray-700);
 
-    background-image: svg-load("../images/logo.svg"),
-      linear-gradient(
-        0deg,
-        var(--main-bg-color) 5%,
-        hsla(0, 0%, 100%, 0.5) 100%
+    background-image:
+      svg-load("../images/logo.svg"), 
+      url("../images/bg/bg400.jpg");
+
+    background-image:
+      svg-load("../images/logo.svg"),
+      image-set(
+        url("../images/bg/bg400.avif") type("image/avif"),
+        url("../images/bg/bg400.webp") type("image/webp"),
+        url("../images/bg/bg400.jpg") type("image/jpeg")
       );
+
     height: clamp(20rem, 50vw, 70rem);
 
     position: sticky;
@@ -36,6 +42,54 @@ const { heading, subheading } = Astro.props;
     animation: fade 1s linear;
     animation-play-state: paused;
     animation-delay: calc(var(--scroll) * -1s);
+  }
+
+  @media (min-width: 400.01px) {
+    header {
+      background-image:
+      svg-load("../images/logo.svg"), 
+      url("../images/bg/bg800.jpg");
+
+      background-image:
+        svg-load("../images/logo.svg"),
+        image-set(
+          url("../images/bg/bg800.avif") type("image/avif"),
+          url("../images/bg/bg800.webp") type("image/webp"),
+          url("../images/bg/bg800.jpg") type("image/jpeg")
+        );
+    }
+  }
+
+  @media (min-width: 800.01px) {
+    header {
+      background-image:
+      svg-load("../images/logo.svg"), 
+      url("../images/bg/bg1300.jpg");
+
+      background-image:
+        svg-load("../images/logo.svg"),
+        image-set(
+          url("../images/bg/bg1300.avif") type("image/avif"),
+          url("../images/bg/bg1300.webp") type("image/webp"),
+          url("../images/bg/bg1300.jpg") type("image/jpeg")
+        );
+    }
+  }
+
+  @media (min-width: 1300.01px) {
+    header {
+      background-image:
+      svg-load("../images/logo.svg"), 
+      url("../images/bg/bg2500.jpg");
+
+      background-image:
+        svg-load("../images/logo.svg"),
+        image-set(
+          url("../images/bg/bg2500.avif") type("image/avif"),
+          url("../images/bg/bg2500.webp") type("image/webp"),
+          url("../images/bg/bg2500.jpg") type("image/jpeg")
+        );
+    }
   }
 
   @keyframes fade {
