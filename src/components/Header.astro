@@ -17,7 +17,9 @@ const { heading, subheading } = Astro.props;
     background-repeat: no-repeat;
     background-position: center 15%;
     background-size: cover;
+
     background-color: var(--color-gray-700);
+
     background-image: svg-load("../images/logo.svg"),
       linear-gradient(
         0deg,
@@ -39,20 +41,6 @@ const { heading, subheading } = Astro.props;
   @keyframes fade {
     to {
       opacity: 0;
-    }
-  }
-
-  @media (prefers-color-scheme: dark) {
-    header {
-      background-color: var(--color-gray-700);
-
-      position: sticky;
-      top: 0;
-    }
-
-    h1,
-    h2 {
-      --header-font-color: var(--color-gray-100);
     }
   }
 
