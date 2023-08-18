@@ -1,0 +1,89 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import HeroImage from "@components/HeroImage.astro";
+import Description from "@components/Description.astro";
+import Rig from "@components/Rig.astro";
+import RigEntry from "@components/RigEntry.astro";
+
+import DescriptionPicture from "@components/DescriptionPicture.astro";
+
+import image1 from "@assets/games/csgo/picture1.jpg";
+import image2 from "@assets/games/csgo/picture2.jpg";
+---
+
+<!-- "https://tracker.gg/valorant/profile/riot/GummientchenCH%231337/overview?playlist=unrated&season=all" -->
+<Layout
+  title="Gummientchen - CS:GO"
+  description="Join Gummientchen on a gaming odyssey like no other. From dominating battlefields to unraveling epic quests, Gummientchen explores pixel realms, leaving no virtual stone unturned."
+  heading="Gummientchen"
+  subheading="I don't have a smoke - then fucking buy one"
+>
+  <HeroImage svg="csgo" />
+  <Description>
+    <p>
+      Immerse yourself in the heart-pounding adventure of Counter-Strike: Global
+      Offensive (CS:GO), the immersive multiplayer tactical first-person shooter
+      that's been taking the gaming world by storm.
+    </p>
+
+    <p>
+      In this epic tale, you'll become part of a battlefield that pits the
+      fearless Terrorists against the relentless Counter-Terrorists. As you
+      embark on heart-pounding missions, the fate of objectives and hostages
+      rests in your hands. Plan your strategies, defuse bombs, and rescue
+      captives in nail-biting showdowns. Engage in a symphony of gunshots,
+      strategy, and adrenaline as you fight your way to victory.
+    </p>
+
+    <DescriptionPicture
+      src={image1}
+      alt="Three skilled operators in full gear, poised and ready for intense in-game combat, their weapons at the ready and determined expressions on their faces, embodying the spirit of tactical teamwork and strategic engagement. Valve©"
+    />
+
+    <p>
+      But this is no ordinary game – CS:GO offers an array of modes that cater
+      to every gamer's tastes. Dive into the heat of Competitive mode, where
+      every move matters and teamwork is your key to success. Or unleash chaos
+      in the fast-paced mayhem of Deathmatch, a playground for sharpening your
+      skills. Feeling the rush of the battle royale craze? Step into the "Danger
+      Zone" where up to 18 players compete for survival in a shrinking
+      battlefield.
+    </p>
+
+    <p>
+      Gummientchen's playground is not just about war; it's about friendship and
+      camaraderie. Collaborate with players from around the world in intense
+      multiplayer matches, or face off against AI bots to sharpen your tactics.
+      Explore a variety of purchasable weaponry, each with its own unique feel
+      and recoil pattern – just like the rubber ducky that always bounces back!
+    </p>
+
+    <p>
+      But the excitement doesn't stop there! Enter a world where cosmetics are
+      king and skins are the crown jewels. Customize your arsenal and express
+      your unique style with a collection of weapon skins that add a splash of
+      personality to your firearms. Unleash your creativity in the Steam
+      Workshop, uploading your own content to share with the community.
+    </p>
+
+    <DescriptionPicture
+      src={image2}
+      alt="FBI agent wielding a submachine gun in an urban environment. Valve©"
+    />
+
+    <p>
+      As the sun sets on the legacy of CS:GO, a new dawn approaches with the
+      announcement of "Counter-Strike 2." Valve has pulled back the curtain,
+      revealing an upcoming masterpiece powered by the mighty Source 2 engine.
+      Brace yourself for enhanced visuals, epic battles, and a new chapter in
+      the history of gaming.
+    </p>
+
+    <p>
+      Whether you're a seasoned Counter-Strike veteran or a newcomer ready to
+      embrace the rubber ducky's call, Gummientchen's universe of excitement
+      awaits. Are you prepared to step onto the battlefield and claim your
+      victory? The world of CS:GO is calling – answer it and become a legend!
+    </p>
+  </Description>
+</Layout>

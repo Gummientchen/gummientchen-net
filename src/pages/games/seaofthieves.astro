@@ -1,0 +1,128 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import HeroImage from "@components/HeroImage.astro";
+import Description from "@components/Description.astro";
+import Rig from "@components/Rig.astro";
+import RigEntry from "@components/RigEntry.astro";
+
+import DescriptionPicture from "@components/DescriptionPicture.astro";
+
+import image1 from "@assets/games/seaofthieves/picture1.jpg";
+import image2 from "@assets/games/seaofthieves/picture2.jpg";
+---
+
+<Layout
+  title="Gummientchen - Sea of Thieves"
+  description="Join Gummientchen on a gaming odyssey like no other. From dominating battlefields to unraveling epic quests, Gummientchen explores pixel realms, leaving no virtual stone unturned."
+  heading="Gummientchen"
+  subheading="I am a duck of fortune and must seek my fortune."
+>
+  <HeroImage svg="seaofthieves" />
+  <Rig title="My Stats">
+    <RigEntry component="Playtime">160 hours (18.08.2023)</RigEntry>
+    <RigEntry component="Platform">Steam</RigEntry>
+    <RigEntry component="Playing with">
+      SmashinVP / lwt2 / Raron / eineob01 / cloud
+    </RigEntry>
+  </Rig>
+  <Description>
+    <p>
+      Embark on a swashbuckling journey like no other in the whimsical realm of
+      Sea of Thieves! Set sail upon a vast, open world of azure oceans, where
+      daring adventurers assume the roles of pirates to unlock the mysteries and
+      treasures that the salty winds carry. Developed by Rare and published by
+      Microsoft Studios, this action-adventure sensation was born from the
+      imagination of players themselves.
+    </p>
+
+    <p>
+      Dive headfirst into the role of a cunning pirate, navigating the
+      shimmering seas aboard a majestic ship, from a perspective that places you
+      right in the heart of the action. Form alliances with fellow treasure
+      seekers, forging unbreakable bonds to overcome the tides of fortune or
+      clash in epic battles that leave legends in their wake.
+    </p>
+
+    <DescriptionPicture
+      src={image1}
+      alt="Against the backdrop of a captivating Sea of Thieves sunset, four players strike a charismatic pose on an island, their eyes fixed on the camera. In the distance, their sturdy ship rests on the tranquil waters, a testament to their seafaring adventures. Rare©"
+    />
+
+    <p>
+      In a world teeming with endless possibilities, you will chart your own
+      course, each voyage a unique saga waiting to be unraveled. With a nimble
+      sloop, a formidable brigantine, or a grand galleon at your command, you
+      and your crew will take on the seas in search of the fabled Gold Hoarders,
+      Order of Souls, and Merchant Alliance. Whether deciphering riddles,
+      battling skeletal hordes, or ferrying precious cargo, the life of a pirate
+      is anything but ordinary.
+    </p>
+
+    <p>
+      Gaze upon stunning vistas and face tempestuous storms as you traverse a
+      realm where danger lurks beneath the waves. The thrill of cannon fire will
+      rattle your bones as you fend off rival pirates or face off against
+      monstrous megalodons and mythical krakens. It's a pirate's life for you,
+      where camaraderie and cunning are as vital as the cut of your jib.
+    </p>
+
+    <DescriptionPicture
+      src={image2}
+      alt="Thrilling moment captured: A mighty seafaring vessel under assault by the legendary kraken in the treacherous waters of Sea of Thieves. Rare©"
+    />
+
+    <p>
+      Sea of Thieves, a canvas painted with dreams, was conceived from the
+      legacy of Eve Online, the intensity of DayZ, and the mystique of Pirates
+      of the Caribbean. A living, breathing world that evolves with each passing
+      wave, beckoning you to uncover hidden truths, accumulate untold riches,
+      and etch your own saga into the annals of pirate lore.
+    </p>
+
+    <p>
+      Venture forth and become a legend in your own right, as Sea of Thieves
+      entices you to embark on a journey that treads the fine line between
+      reality and the realms of the fantastic. With every passing update, new
+      horizons unfurl, tales take flight, and the sea's siren call grows
+      stronger. Will you be the pirate that shapes the tides, or will you
+      succumb to the mysteries that lie beneath? Cast off the bowlines and
+      embrace the adventure that awaits in Sea of Thieves. Yo ho, yo ho, a
+      pirate's life for thee!
+    </p>
+  </Description>
+  <Rig title="Information about the Game">
+    <RigEntry component="Developer">Rare</RigEntry>
+    <RigEntry component="Publisher">Microsoft Studios</RigEntry>
+    <RigEntry component="Release Date">20.03.2018</RigEntry>
+    <RigEntry component="Genre">Action-adventure</RigEntry>
+    <RigEntry component="Official Website">
+      <a href="https://www.seaofthieves.com/">seaofthieves.com</a>
+    </RigEntry>
+    <RigEntry component="Steam Store Page">
+      <a
+        href="https://store.steampowered.com/app/1172620/Sea_of_Thieves_2023_Edition/"
+        >Sea of Thieves on Steam</a
+      >
+    </RigEntry>
+    <RigEntry component="Microsoft Store Page">
+      <a
+        href="https://www.xbox.com/en-us/games/store/sea-of-thieves-2023-edition/9p2n57mc619k?activetab=pivot:overviewtab&source=lp"
+        >Sea of Thieves on Microsoft Store</a
+      >
+    </RigEntry>
+    <RigEntry component="Twitch">
+      <a
+        href="https://steamcommunity.com/linkfilter/?url=https://www.twitch.tv/seaofthieves"
+        >Sea of Thieves on Twitch</a
+      >
+    </RigEntry>
+    <RigEntry component="Twitter">
+      <a href="https://twitter.com/SeaOfThieves">Sea of Thieves on Twitter</a>
+    </RigEntry>
+    <RigEntry component="YouTube">
+      <a href="https://www.youtube.com/seaofthieves/"
+        >Sea of Thieves on YouTube</a
+      >
+    </RigEntry>
+  </Rig>
+</Layout>

@@ -31,7 +31,7 @@ const { default: arrow } = await import("../images/arrow-right.svg?raw");
 ---
 
 <div class="card">
-  <div set:html={svgtext} transition:name={service} />
+  <div set:html={svgtext} transition:name={svg} />
   <h2>
     {service}{gamertag && <span>: {gamertag}</span>}
   </h2>

@@ -1,16 +1,15 @@
 ---
 export interface Props {
-  service: string;
   svg: string;
 }
 
-const { service, svg } = Astro.props;
+const { svg } = Astro.props;
 const { default: svgtext } = await import(`../images/${svg}.svg?raw`);
 ---
 
 <section>
   <div class="wrapper">
-    <div class="heroImage" set:html={svgtext} transition:name={service} />
+    <div class="heroImage" set:html={svgtext} transition:name={svg} />
   </div>
 </section>
 
@@ -20,7 +19,7 @@ const { default: svgtext } = await import(`../images/${svg}.svg?raw`);
     background-color: var(--main-bg-color);
     z-index: 1;
 
-    padding-block-end: 0 !important;
+    /* padding-block-end: 0 !important; */
   }
 
   .wrapper {

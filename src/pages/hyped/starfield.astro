@@ -1,9 +1,11 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import HeroImage from "../../components/HeroImage.astro";
-import Description from "../../components/Description.astro";
+import HeroImage from "@components/HeroImage.astro";
+import Description from "@components/Description.astro";
+import Rig from "@components/Rig.astro";
+import RigEntry from "@components/RigEntry.astro";
 
-import DescriptionPicture from "../../components/DescriptionPicture.astro";
+import DescriptionPicture from "@components/DescriptionPicture.astro";
 
 import image1 from "@assets/hyped/starfield/schdmh.jpg";
 import image2 from "@assets/hyped/starfield/scmlzk.jpg";
@@ -14,9 +16,9 @@ import image3 from "@assets/hyped/starfield/schdmk.jpg";
   title="Gummientchen - Starfield"
   description="Join Gummientchen on a gaming odyssey like no other. From dominating battlefields to unraveling epic quests, Gummientchen explores pixel realms, leaving no virtual stone unturned."
   heading="Gummientchen"
-  subheading="Conquering Virtually Everything"
+  subheading="When you can't win the fight, you get bigger guns"
 >
-  <HeroImage service="Starfield" svg="starfield" />
+  <HeroImage svg="starfield" />
   <Description>
     <p>
       Embark on a cosmic odyssey that defies the bounds of imagination in
@@ -38,7 +40,7 @@ import image3 from "@assets/hyped/starfield/schdmk.jpg";
 
     <DescriptionPicture
       src={image1}
-      alt="A player looking out of his ships cockpit. Bethesda©"
+      alt="View from a ship's cockpit: A focused player gazes out, immersed in the vast expanse beyond. Bethesda©"
     />
 
     <p>
@@ -62,7 +64,7 @@ import image3 from "@assets/hyped/starfield/schdmk.jpg";
 
     <DescriptionPicture
       src={image2}
-      alt="A good look at the main city. Bethesda©"
+      alt="Captivating aerial view of the bustling metropolis in Starfield, showcasing its vibrant cityscape and dynamic urban life. Bethesda©"
     />
 
     <p>
@@ -97,7 +99,7 @@ import image3 from "@assets/hyped/starfield/schdmk.jpg";
 
     <DescriptionPicture
       src={image3}
-      alt="A sandwhich and a weapon on a table. Bethesda©"
+      alt="An appetizing sandwich placed alongside a formidable weapon on a tabletop. Bethesda©"
     />
 
     <p>
@@ -118,4 +120,23 @@ import image3 from "@assets/hyped/starfield/schdmk.jpg";
       Bethesda Game Studios.
     </p>
   </Description>
+  <Rig title="Information about the Game">
+    <RigEntry component="Developer">Bethesda Game Studios</RigEntry>
+    <RigEntry component="Publisher">Bethesda Softworks</RigEntry>
+    <RigEntry component="Release Date">06.09.2023</RigEntry>
+    <RigEntry component="Genre">Action role-playing</RigEntry>
+    <RigEntry component="Official Website">
+      <a href="https://bethesda.net/en/game/starfield">bethesda.net</a>
+    </RigEntry>
+    <RigEntry component="Steam Store Page">
+      <a href="https://store.steampowered.com/app/1716740/Starfield/"
+        >Starfield on Steam</a
+      >
+    </RigEntry>
+    <RigEntry component="Microsoft Store Page">
+      <a href="https://www.xbox.com/en-us/games/store/starfield/9ncjsxwztp88"
+        >Starfield on Microsoft Store</a
+      >
+    </RigEntry>
+  </Rig>
 </Layout>

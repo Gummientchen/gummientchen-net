@@ -1,0 +1,114 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import HeroImage from "@components/HeroImage.astro";
+import Description from "@components/Description.astro";
+import Rig from "@components/Rig.astro";
+import RigEntry from "@components/RigEntry.astro";
+
+import DescriptionPicture from "@components/DescriptionPicture.astro";
+
+import image1 from "@assets/games/rocketleague/picture1.jpg";
+import image2 from "@assets/games/rocketleague/picture2.jpg";
+---
+
+<Layout
+  title="Gummientchen - Rocket League"
+  description="Join Gummientchen on a gaming odyssey like no other. From dominating battlefields to unraveling epic quests, Gummientchen explores pixel realms, leaving no virtual stone unturned."
+  heading="Gummientchen"
+  subheading="The road to plat is paved with a stuck gas pedal"
+>
+  <HeroImage svg="rocketleague_2" />
+  <Rig title="My Stats">
+    <RigEntry component="Playtime">1083 hours (18.08.2023)</RigEntry>
+    <RigEntry component="Platform">Steam</RigEntry>
+    <RigEntry component="Playing with">SmashinVP / lwt2 / Eas</RigEntry>
+  </Rig>
+  <Description>
+    <p>
+      Introducing... <strong
+        >Rocket League: Unleash Your Inner Speedster on the Pitch!</strong
+      >
+    </p>
+
+    <p>
+      Welcome to the electrifying world of Rocket League, where the laws of
+      physics and the rules of soccer collide in a turbo-charged showdown!
+      Psyonix invites you to embark on an automotive odyssey that's part
+      demolition derby, part precision sport, and all adrenaline-fueled action.
+      Get ready to pilot rocket-powered cars and unleash your competitive spirit
+      in the ultimate vehicular soccer showdown!
+    </p>
+
+    <p>
+      Rocket League takes the playground classic to gravity-defying heights,
+      merging the rush of rocket-propelled vehicles with the finesse of soccer.
+      Picture this: rocket cars defying gravity, mid-air spins and flips,
+      soaring high to intercept the colossal ball and smashing it into the
+      opponent's net. You'll experience heart-pounding moments as you
+      orchestrate daring aerial shots and crafty maneuvers, all while
+      maneuvering your souped-up vehicle across the futuristic field.
+    </p>
+
+    <DescriptionPicture
+      src={image1}
+      alt="Intense gameplay snapshot: Player on the verge of scoring a goal in Rocket League, as they skillfully position themselves to strike the ball into the opponent's net. Psyonix©"
+    />
+
+    <p>
+      Engage in furious 1v1 duels or assemble a dream team of friends in the
+      frenetic 4v4 mode. Every car is a player, every boost is a catalyst for
+      chaos, and every goal is a triumphant shout of victory. With customizable
+      vehicles, a myriad of power-ups, and the freedom to execute jaw-dropping
+      stunts, your journey on the field will be a combination of strategy,
+      skill, and spectacle.
+    </p>
+
+    <p>
+      Create your unique car from a vast selection of eye-popping paint jobs,
+      flashy wheels, and blazing boost trails. Are you a stealthy ninja on
+      wheels or a flashy disco ball of destruction? The choice is yours. And
+      with the introduction of Blueprints, no two cars need to be the same
+      again. Unleash your creativity and craft the ride of your dreams.
+    </p>
+
+    <p>
+      Rocket League is not just a game; it's a phenomenon that has taken the
+      esports world by storm. Show off your skills in competitive online matches
+      and ascend the ranks of the Rocket League Championship Series. Engage in
+      heart-pounding tournaments that draw crowds from around the world and make
+      your mark on the esports stage.
+    </p>
+
+    <DescriptionPicture
+      src={image2}
+      alt="Skilled player dribbling the ball towards the enemy goal in Rocket League, while a rival in the background attempts an unsuccessful backflip, narrowly missing the ball. Psyonix©"
+    />
+
+    <p>
+      From its humble origins as Supersonic Acrobatic Rocket-Powered Battle-Cars
+      to the powerhouse that is Rocket League, Psyonix has honed their formula
+      to perfection. The game's relentless evolution has brought new game modes,
+      wild mutators, and even ice hockey and basketball-inspired challenges.
+      With each update, Rocket League keeps the fire of innovation burning,
+      ensuring that every match is an exhilarating surprise.
+    </p>
+
+    <p>
+      Join the Rocket League community and embrace the rush of rocket-fueled
+      soccer. Whether you're a casual player or a competitive champ, Rocket
+      League offers an exciting blend of high-speed action, team strategy, and
+      heart-stopping drama. Strap in, rev up those engines, and take your place
+      on the pitch. In Rocket League, the world is your playground and victory
+      is your destiny. Get ready to launch into the future of sports gaming!
+    </p>
+  </Description>
+  <Rig title="Information about the Game">
+    <RigEntry component="Developer">Psyonix</RigEntry>
+    <RigEntry component="Publisher">Psyonix</RigEntry>
+    <RigEntry component="Release Date">07.07.2015</RigEntry>
+    <RigEntry component="Genre">Sports</RigEntry>
+    <RigEntry component="Official Website">
+      <a href="https://www.rocketleague.com/">rocketleague.com</a>
+    </RigEntry>
+  </Rig>
+</Layout>

@@ -1,0 +1,112 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import HeroImage from "@components/HeroImage.astro";
+import Description from "@components/Description.astro";
+import Rig from "@components/Rig.astro";
+import RigEntry from "@components/RigEntry.astro";
+
+import DescriptionPicture from "@components/DescriptionPicture.astro";
+
+import image1 from "@assets/games/factorio/picture1.jpg";
+import image2 from "@assets/games/factorio/picture2.png";
+---
+
+<!-- "https://tracker.gg/valorant/profile/riot/GummientchenCH%231337/overview?playlist=unrated&season=all" -->
+<Layout
+  title="Gummientchen - Factorio"
+  description="Join Gummientchen on a gaming odyssey like no other. From dominating battlefields to unraveling epic quests, Gummientchen explores pixel realms, leaving no virtual stone unturned."
+  heading="Gummientchen"
+  subheading="Everything is infinite. Except time and UPS"
+>
+  <HeroImage svg="factorio" />
+  <Rig title="My Stats">
+    <RigEntry component="Playtime">623 hours (18.08.2023)</RigEntry>
+    <RigEntry component="Platform">Steam</RigEntry>
+    <RigEntry component="Playing with">Raron / Damheat</RigEntry>
+  </Rig>
+  <Description>
+    <p>Welcome to the mesmerizing world of Factorio – an extraordinary game.</p>
+
+    <p>
+      Embark on an interstellar journey as a brilliant engineer, stranded on an
+      alien planet, armed with nothing but resourcefulness and determination.
+      Your mission? Transform this enigmatic realm into a symphony of industry,
+      creation, and survival. As the conductor of this remarkable cosmic
+      orchestra, you must craft tools, machines, and technologies, all while
+      fending off the indigenous creatures of this strange world.
+    </p>
+
+    <p>
+      Factorio, the crown jewel of construction and management simulations,
+      beckons you to sculpt a thriving factory paradise. Master the art of
+      resource-gathering with real-time strategy, as you design intricate
+      systems to automate mining, processing, and assembly. The blueprint system
+      grants you the power to duplicate entire factory sections, turning your
+      efforts into masterpieces of efficiency.
+    </p>
+
+    <DescriptionPicture
+      src={image1}
+      alt="Powerful rocket launching from within a dense forest in Factorio, soaring triumphantly from its launch silo amidst the vibrant greenery. Wube©"
+    />
+
+    <p>
+      But beware, for as your factory grows, so does the ire of the planet's
+      ferocious inhabitants – Biters, Spitters, and Worms. Pollution fuels their
+      aggression, demanding a delicate balance between progress and harmony.
+      Defend your creations using tanks, turrets, and your ingenious weaponry,
+      evolving your arsenal to counter ever-adapting foes.
+    </p>
+
+    <p>
+      Feel the exhilaration of cooperation in multiplayer mode, where you and
+      your friends can collaborate, compete, and share blueprints in the
+      ultimate factory-building frenzy. And for those with a creative itch, the
+      modding community beckons, inviting you to craft your own stories,
+      systems, and visual transformations.
+    </p>
+
+    <p>
+      Witness the birth of Factorio through a labor of love from the minds at
+      Wube Software. From humble beginnings to galactic triumph, this game has
+      matured into a phenomenon, enchanting over three million players with its
+      intricate gameplay and captivating visuals.
+    </p>
+
+    <DescriptionPicture
+      src={image2}
+      alt="Captivating artwork depicting a colossal alien worm baring its multitude of razor-sharp teeth in a menacing display, adding an extra layer of intrigue to the mysterious world of Factorio. Wube©"
+    />
+
+    <p>
+      Now is your chance to immerse yourself in a universe where science and
+      whimsy coalesce, as you design, defend, and dominate your way to becoming
+      an industrial titan. Let Factorio be your beacon of strategic brilliance,
+      where rubber ducks and rocket launches collide in a cosmic ballet of
+      construction and chaos.
+    </p>
+
+    <p>
+      Join the ranks of devoted engineers who have paved their path to the
+      stars. Unleash your inner architect, tactician, and adventurer in the
+      world of Factorio. Get ready to build, automate, and conquer – all with a
+      rubber ducky by your side.
+    </p>
+  </Description>
+  <Rig title="Information about the Game">
+    <RigEntry component="Developer">Wube Software</RigEntry>
+    <RigEntry component="Publisher">Wube Software</RigEntry>
+    <RigEntry component="Release Date">14.08.2020</RigEntry>
+    <RigEntry component="Genre">
+      Factory simulation, real-time strategy
+    </RigEntry>
+    <RigEntry component="Official Website">
+      <a href="https://www.factorio.com/">factorio.com</a>
+    </RigEntry>
+    <RigEntry component="Steam Store Page">
+      <a href="https://store.steampowered.com/app/427520/Factorio/"
+        >Factorio on Steam</a
+      >
+    </RigEntry>
+  </Rig>
+</Layout>

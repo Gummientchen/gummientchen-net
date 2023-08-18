@@ -1,9 +1,11 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import HeroImage from "../../components/HeroImage.astro";
-import Description from "../../components/Description.astro";
+import HeroImage from "@components/HeroImage.astro";
+import Description from "@components/Description.astro";
+import Rig from "@components/Rig.astro";
+import RigEntry from "@components/RigEntry.astro";
 
-import DescriptionPicture from "../../components/DescriptionPicture.astro";
+import DescriptionPicture from "@components/DescriptionPicture.astro";
 
 import image1 from "@assets/games/valorant/picture1.jpg";
 import image2 from "@assets/games/valorant/picture2.jpg";
@@ -14,9 +16,15 @@ import image2 from "@assets/games/valorant/picture2.jpg";
   title="Gummientchen - Valorant"
   description="Join Gummientchen on a gaming odyssey like no other. From dominating battlefields to unraveling epic quests, Gummientchen explores pixel realms, leaving no virtual stone unturned."
   heading="Gummientchen"
-  subheading="Conquering Virtually Everything"
+  subheading="Headshots speak louder than words"
 >
-  <HeroImage service="Valorant" svg="valorant" />
+  <HeroImage svg="valorant" />
+  <Rig title="My Stats">
+    <RigEntry component="Platform">Riot</RigEntry>
+    <RigEntry component="Playing with">
+      SmashinVP / lwt2 / Eas / Raron / eineob01 / cloud
+    </RigEntry>
+  </Rig>
   <Description>
     <p>
       Step into a world on the brink of chaos, where the fate of nations hangs
@@ -38,7 +46,7 @@ import image2 from "@assets/games/valorant/picture2.jpg";
 
     <DescriptionPicture
       src={image1}
-      alt="Valorant agents in their hero poses in front of a big red Valorant logo. Riot Games©"
+      alt="Valorant agents striking iconic hero poses against the backdrop of a bold red Valorant logo. Riot Games©"
     />
 
     <p>
@@ -72,7 +80,7 @@ import image2 from "@assets/games/valorant/picture2.jpg";
 
     <DescriptionPicture
       src={image2}
-      alt="A typical play scene of Valorant. Riot Games©"
+      alt="An intense gameplay moment in Valorant, showcasing skilled characters in strategic combat within a diverse environment. Riot Games©"
     />
 
     <p>
@@ -102,4 +110,13 @@ import image2 from "@assets/games/valorant/picture2.jpg";
       awaits your heroism.
     </p>
   </Description>
+  <Rig title="Information about the Game">
+    <RigEntry component="Developer">Riot Games</RigEntry>
+    <RigEntry component="Publisher">Riot Games</RigEntry>
+    <RigEntry component="Release Date">02.06.2020</RigEntry>
+    <RigEntry component="Genre">Hero shooter, Tactical shooter</RigEntry>
+    <RigEntry component="Official Website">
+      <a href="https://playvalorant.com/">playvalorant.com</a>
+    </RigEntry>
+  </Rig>
 </Layout>

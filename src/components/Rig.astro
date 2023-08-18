@@ -1,10 +1,10 @@
 ---
 export interface Props {
   title: string;
-  href: string;
+  href?: string;
 }
 
-const { title = "Rig", href } = Astro.props;
+const { title = "Rig", href = false } = Astro.props;
 const { default: arrow } = await import("../images/arrow-right.svg?raw");
 ---
 
@@ -16,10 +16,14 @@ const { default: arrow } = await import("../images/arrow-right.svg?raw");
         <slot />
       </tbody>
     </table>
-    <a class="button bright" target="_blank" rel="noopener" href={href}
-      >full specs
-      <span set:html={arrow}></span>
-    </a>
+    {
+      href && (
+        <a class="button bright" target="_blank" rel="noopener" href={href}>
+          full specs
+          <span set:html={arrow} />
+        </a>
+      )
+    }
   </div>
 </section>
 
