@@ -1,7 +1,7 @@
 ---
 ---
 
-<section>
+<section class="description">
   <div class="wrapper">
     <slot />
   </div>
@@ -34,5 +34,14 @@
     section {
       grid-template-columns: 1fr 80rem 1fr;
     }
+  }
+
+  :global(section.description .wrapper h3) {
+    padding-block-end: 0;
+    margin-block-end: 0 !important;
+  }
+
+  :global(h3 + p) {
+    margin-block-start: 0;
   }
 </style>

@@ -24,7 +24,6 @@ svg.svgthemed {
   fill: #fff;
 }
 
-
 html,
 body {
   margin: 0;
@@ -45,7 +44,7 @@ body {
   padding-block: 2rem;
 }
 
-.container section:first-of-type {
+.container section:first-of-type:not(.heroSection) {
   padding-top: 5rem;
 }
 

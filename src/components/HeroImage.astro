@@ -1,17 +1,20 @@
 ---
 export interface Props {
   svg: string;
+  fill?: string;
 }
 
-const { svg } = Astro.props;
+const { svg, fill } = Astro.props;
 const { default: svgtext } = await import(`../images/${svg}.svg?raw`);
 ---
 
-<section>
+<section class="heroSection">
   <div class="wrapper">
     <div class="heroImage" set:html={svgtext} transition:name={svg} />
   </div>
 </section>
+
+{fill && <style>.heroImage path { fill: white }</style>}
 
 <style>
   section {
@@ -23,17 +26,21 @@ const { default: svgtext } = await import(`../images/${svg}.svg?raw`);
   }
 
   .wrapper {
-    position: relative;
-    aspect-ratio: 32/9;
+    /* position: relative; */
+    /* aspect-ratio: 32/9; */
   }
 
   .heroImage {
-    position: absolute;
+    /* position: absolute; */
     bottom: 0;
     width: 100%;
-    background-color: var(--color-gray-700);
+    /* background-color: var(--color-gray-700); */
     border-radius: 0.5rem;
     overflow: hidden;
+  }
+
+  :global(.heroImage > svg) {
+    background: transparent !important;
   }
 
   @media (min-width: 66rem) {

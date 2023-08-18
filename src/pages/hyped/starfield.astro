@@ -2,8 +2,9 @@
 import Layout from "@layouts/Layout.astro";
 import HeroImage from "@components/HeroImage.astro";
 import Description from "@components/Description.astro";
-import Rig from "@components/Rig.astro";
-import RigEntry from "@components/RigEntry.astro";
+import Table from "@components/Table.astro";
+import TableRow from "@components/TableRow.astro";
+import PlatformLink from "@components/PlatformLink.astro";
 
 import DescriptionPicture from "@components/DescriptionPicture.astro";
 
@@ -15,8 +16,9 @@ import image3 from "@assets/hyped/starfield/schdmk.jpg";
 <Layout
   title="Gummientchen - Starfield"
   description="Join Gummientchen on a gaming odyssey like no other. From dominating battlefields to unraveling epic quests, Gummientchen explores pixel realms, leaving no virtual stone unturned."
-  heading="Gummientchen"
+  heading="Starfield"
   subheading="When you can't win the fight, you get bigger guns"
+  minimal="true"
 >
   <HeroImage svg="starfield" />
   <Description>
@@ -120,23 +122,31 @@ import image3 from "@assets/hyped/starfield/schdmk.jpg";
       Bethesda Game Studios.
     </p>
   </Description>
-  <Rig title="Information about the Game">
-    <RigEntry component="Developer">Bethesda Game Studios</RigEntry>
-    <RigEntry component="Publisher">Bethesda Softworks</RigEntry>
-    <RigEntry component="Release Date">06.09.2023</RigEntry>
-    <RigEntry component="Genre">Action role-playing</RigEntry>
-    <RigEntry component="Official Website">
-      <a href="https://bethesda.net/en/game/starfield">bethesda.net</a>
-    </RigEntry>
-    <RigEntry component="Steam Store Page">
-      <a href="https://store.steampowered.com/app/1716740/Starfield/"
-        >Starfield on Steam</a
-      >
-    </RigEntry>
-    <RigEntry component="Microsoft Store Page">
-      <a href="https://www.xbox.com/en-us/games/store/starfield/9ncjsxwztp88"
-        >Starfield on Microsoft Store</a
-      >
-    </RigEntry>
-  </Rig>
+  <Table title="Information about the Game">
+    <TableRow component="Developer">Bethesda Game Studios</TableRow>
+    <TableRow component="Publisher">Bethesda Softworks</TableRow>
+    <TableRow component="Release Date">06.09.2023</TableRow>
+    <TableRow component="Genre">Action role-playing</TableRow>
+    <TableRow component="Official Website">
+      <PlatformLink
+        linktext="bethesda.net"
+        linkhref="https://bethesda.net/en/game/starfield"
+        iconname=""
+      />
+    </TableRow>
+    <TableRow component="Steam Store Page">
+      <PlatformLink
+        linktext="Starfield on Steam"
+        linkhref="https://store.steampowered.com/app/1716740/Starfield/"
+        iconname="steam"
+      />
+    </TableRow>
+    <TableRow component="Microsoft Store Page">
+      <PlatformLink
+        linktext="Starfield on Microsoft Store"
+        linkhref="https://www.xbox.com/en-us/games/store/starfield/9ncjsxwztp88"
+        iconname="msstore"
+      />
+    </TableRow>
+  </Table>
 </Layout>

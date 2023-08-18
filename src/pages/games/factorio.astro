@@ -2,8 +2,9 @@
 import Layout from "@layouts/Layout.astro";
 import HeroImage from "@components/HeroImage.astro";
 import Description from "@components/Description.astro";
-import Rig from "@components/Rig.astro";
-import RigEntry from "@components/RigEntry.astro";
+import Table from "@components/Table.astro";
+import TableRow from "@components/TableRow.astro";
+import PlatformLink from "@components/PlatformLink.astro";
 
 import DescriptionPicture from "@components/DescriptionPicture.astro";
 
@@ -15,15 +16,27 @@ import image2 from "@assets/games/factorio/picture2.png";
 <Layout
   title="Gummientchen - Factorio"
   description="Join Gummientchen on a gaming odyssey like no other. From dominating battlefields to unraveling epic quests, Gummientchen explores pixel realms, leaving no virtual stone unturned."
-  heading="Gummientchen"
-  subheading="Everything is infinite. Except time and UPS"
+  heading="Factorio"
+  subheading="Everything is infinite. Except time and UPS."
+  minimal="true"
 >
   <HeroImage svg="factorio" />
-  <Rig title="My Stats">
-    <RigEntry component="Playtime">623 hours (18.08.2023)</RigEntry>
-    <RigEntry component="Platform">Steam</RigEntry>
-    <RigEntry component="Playing with">Raron / Damheat</RigEntry>
-  </Rig>
+  <Table title="My Stats">
+    <TableRow component="Playtime">623 hours (18.08.2023)</TableRow>
+    <TableRow component="Platform">Steam</TableRow>
+    <TableRow component="Playing with">
+      <PlatformLink
+        linktext="Raron"
+        linkhref="https://steamcommunity.com/id/raron1"
+        iconname="steam"
+      /> /
+      <PlatformLink
+        linktext="Damheat"
+        linkhref="https://steamcommunity.com/id/damhaet"
+        iconname="steam"
+      />
+    </TableRow>
+  </Table>
   <Description>
     <p>Welcome to the mesmerizing world of Factorio – an extraordinary game.</p>
 
@@ -93,20 +106,26 @@ import image2 from "@assets/games/factorio/picture2.png";
       rubber ducky by your side.
     </p>
   </Description>
-  <Rig title="Information about the Game">
-    <RigEntry component="Developer">Wube Software</RigEntry>
-    <RigEntry component="Publisher">Wube Software</RigEntry>
-    <RigEntry component="Release Date">14.08.2020</RigEntry>
-    <RigEntry component="Genre">
+  <Table title="Information about the Game">
+    <TableRow component="Developer">Wube Software</TableRow>
+    <TableRow component="Publisher">Wube Software</TableRow>
+    <TableRow component="Release Date">14.08.2020</TableRow>
+    <TableRow component="Genre">
       Factory simulation, real-time strategy
-    </RigEntry>
-    <RigEntry component="Official Website">
-      <a href="https://www.factorio.com/">factorio.com</a>
-    </RigEntry>
-    <RigEntry component="Steam Store Page">
-      <a href="https://store.steampowered.com/app/427520/Factorio/"
-        >Factorio on Steam</a
-      >
-    </RigEntry>
-  </Rig>
+    </TableRow>
+    <TableRow component="Official Website">
+      <PlatformLink
+        linktext="factorio.com"
+        linkhref="https://www.factorio.com/"
+        iconname=""
+      />
+    </TableRow>
+    <TableRow component="Steam Store Page">
+      <PlatformLink
+        linktext="Factorio on Steam"
+        linkhref="https://store.steampowered.com/app/427520/Factorio/"
+        iconname="steam"
+      />
+    </TableRow>
+  </Table>
 </Layout>

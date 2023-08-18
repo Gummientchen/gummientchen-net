@@ -2,8 +2,9 @@
 import Layout from "@layouts/Layout.astro";
 import HeroImage from "@components/HeroImage.astro";
 import Description from "@components/Description.astro";
-import Rig from "@components/Rig.astro";
-import RigEntry from "@components/RigEntry.astro";
+import Table from "@components/Table.astro";
+import TableRow from "@components/TableRow.astro";
+import PlatformLink from "@components/PlatformLink.astro";
 
 import DescriptionPicture from "@components/DescriptionPicture.astro";
 
@@ -14,17 +15,43 @@ import image2 from "@assets/games/seaofthieves/picture2.jpg";
 <Layout
   title="Gummientchen - Sea of Thieves"
   description="Join Gummientchen on a gaming odyssey like no other. From dominating battlefields to unraveling epic quests, Gummientchen explores pixel realms, leaving no virtual stone unturned."
-  heading="Gummientchen"
+  heading="Sea of Thieves"
   subheading="I am a duck of fortune and must seek my fortune."
+  minimal="true"
 >
   <HeroImage svg="seaofthieves" />
-  <Rig title="My Stats">
-    <RigEntry component="Playtime">160 hours (18.08.2023)</RigEntry>
-    <RigEntry component="Platform">Steam</RigEntry>
-    <RigEntry component="Playing with">
-      SmashinVP / lwt2 / Raron / eineob01 / cloud
-    </RigEntry>
-  </Rig>
+  <Table title="My Stats">
+    <TableRow component="Playtime">160 hours (18.08.2023)</TableRow>
+    <TableRow component="Platform">Steam</TableRow>
+    <TableRow component="Playing with">
+      <PlatformLink
+        linktext="SmashinVP"
+        linkhref="https://steamcommunity.com/id/SmashinVP"
+        iconname="steam"
+      /> /
+      <PlatformLink
+        linktext="lwt2"
+        linkhref="https://steamcommunity.com/id/lwt2"
+        iconname="steam"
+      /> /
+      <PlatformLink
+        linktext="Raron"
+        linkhref="https://steamcommunity.com/id/raron1"
+        iconname="steam"
+      />
+      <br />
+      <PlatformLink
+        linktext="eineob01"
+        linkhref="https://steamcommunity.com/profiles/76561199093613151"
+        iconname="steam"
+      /> /
+      <PlatformLink
+        linktext="cloud"
+        linkhref="https://steamcommunity.com/id/cloud361"
+        iconname="steam"
+      />
+    </TableRow>
+  </Table>
   <Description>
     <p>
       Embark on a swashbuckling journey like no other in the whimsical realm of
@@ -90,39 +117,52 @@ import image2 from "@assets/games/seaofthieves/picture2.jpg";
       pirate's life for thee!
     </p>
   </Description>
-  <Rig title="Information about the Game">
-    <RigEntry component="Developer">Rare</RigEntry>
-    <RigEntry component="Publisher">Microsoft Studios</RigEntry>
-    <RigEntry component="Release Date">20.03.2018</RigEntry>
-    <RigEntry component="Genre">Action-adventure</RigEntry>
-    <RigEntry component="Official Website">
-      <a href="https://www.seaofthieves.com/">seaofthieves.com</a>
-    </RigEntry>
-    <RigEntry component="Steam Store Page">
-      <a
-        href="https://store.steampowered.com/app/1172620/Sea_of_Thieves_2023_Edition/"
-        >Sea of Thieves on Steam</a
-      >
-    </RigEntry>
-    <RigEntry component="Microsoft Store Page">
-      <a
-        href="https://www.xbox.com/en-us/games/store/sea-of-thieves-2023-edition/9p2n57mc619k?activetab=pivot:overviewtab&source=lp"
-        >Sea of Thieves on Microsoft Store</a
-      >
-    </RigEntry>
-    <RigEntry component="Twitch">
-      <a
-        href="https://steamcommunity.com/linkfilter/?url=https://www.twitch.tv/seaofthieves"
-        >Sea of Thieves on Twitch</a
-      >
-    </RigEntry>
-    <RigEntry component="Twitter">
-      <a href="https://twitter.com/SeaOfThieves">Sea of Thieves on Twitter</a>
-    </RigEntry>
-    <RigEntry component="YouTube">
-      <a href="https://www.youtube.com/seaofthieves/"
-        >Sea of Thieves on YouTube</a
-      >
-    </RigEntry>
-  </Rig>
+  <Table title="Information about the Game">
+    <TableRow component="Developer">Rare</TableRow>
+    <TableRow component="Publisher">Microsoft Studios</TableRow>
+    <TableRow component="Release Date">20.03.2018</TableRow>
+    <TableRow component="Genre">Action-adventure</TableRow>
+    <TableRow component="Official Website">
+      <PlatformLink
+        linktext="seaofthieves.com"
+        linkhref="https://www.seaofthieves.com/"
+        iconname=""
+      />
+    </TableRow>
+    <TableRow component="Steam Store Page">
+      <PlatformLink
+        linktext="Sea of Thieves on Steam"
+        linkhref="https://store.steampowered.com/app/1172620/Sea_of_Thieves_2023_Edition/"
+        iconname="steam"
+      />
+    </TableRow>
+    <TableRow component="Microsoft Store Page">
+      <PlatformLink
+        linktext="Sea of Thieves on Microsoft Store"
+        linkhref="https://www.xbox.com/en-us/games/store/sea-of-thieves-2023-edition/9p2n57mc619k?activetab=pivot:overviewtab&source=lp"
+        iconname="msstore"
+      />
+    </TableRow>
+    <TableRow component="Twitch">
+      <PlatformLink
+        linktext="Sea of Thieves on Twitch"
+        linkhref="https://www.twitch.tv/seaofthieves"
+        iconname="twitch"
+      />
+    </TableRow>
+    <TableRow component="Twitter">
+      <PlatformLink
+        linktext="Sea of Thieves on Twitter"
+        linkhref="https://twitter.com/SeaOfThieves"
+        iconname="twitter"
+      />
+    </TableRow>
+    <TableRow component="YouTube">
+      <PlatformLink
+        linktext="Sea of Thieves on YouTube"
+        linkhref="https://www.youtube.com/seaofthieves/"
+        iconname="youtube"
+      />
+    </TableRow>
+  </Table>
 </Layout>

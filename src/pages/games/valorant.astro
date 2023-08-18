@@ -2,8 +2,9 @@
 import Layout from "@layouts/Layout.astro";
 import HeroImage from "@components/HeroImage.astro";
 import Description from "@components/Description.astro";
-import Rig from "@components/Rig.astro";
-import RigEntry from "@components/RigEntry.astro";
+import Table from "@components/Table.astro";
+import TableRow from "@components/TableRow.astro";
+import PlatformLink from "@components/PlatformLink.astro";
 
 import DescriptionPicture from "@components/DescriptionPicture.astro";
 
@@ -15,16 +16,54 @@ import image2 from "@assets/games/valorant/picture2.jpg";
 <Layout
   title="Gummientchen - Valorant"
   description="Join Gummientchen on a gaming odyssey like no other. From dominating battlefields to unraveling epic quests, Gummientchen explores pixel realms, leaving no virtual stone unturned."
-  heading="Gummientchen"
+  heading="Valorant"
   subheading="Headshots speak louder than words"
+  minimal="true"
 >
   <HeroImage svg="valorant" />
-  <Rig title="My Stats">
-    <RigEntry component="Platform">Riot</RigEntry>
-    <RigEntry component="Playing with">
-      SmashinVP / lwt2 / Eas / Raron / eineob01 / cloud
-    </RigEntry>
-  </Rig>
+  <Table title="My Stats">
+    <TableRow component="Playtime">360 hours (18.08.2023)</TableRow>
+    <TableRow component="Platform">Riot</TableRow>
+    <TableRow component="Playing with">
+      <PlatformLink
+        linktext="SmashinVP"
+        linkhref="https://tracker.gg/valorant/profile/riot/SmashinVP%231337/overview?playlist=unrated"
+        iconname="riot"
+      /> /
+      <PlatformLink
+        linktext="lwt2"
+        linkhref="https://tracker.gg/valorant/profile/riot/lwt22%235024/overview?playlist=unrated"
+        iconname="riot"
+      /> /
+      <PlatformLink
+        linktext="Eas"
+        linkhref="https://steamcommunity.com/id/Eas_"
+        iconname="steam"
+      />
+      <br />
+      <PlatformLink
+        linktext="Ruvebo"
+        linkhref="https://steamcommunity.com/id/Ruvebo"
+        iconname="steam"
+      /> /
+      <PlatformLink
+        linktext="Raron"
+        linkhref="https://steamcommunity.com/id/raron1"
+        iconname="steam"
+      /> /
+      <PlatformLink
+        linktext="eineob01"
+        linkhref="https://steamcommunity.com/profiles/76561199093613151"
+        iconname="steam"
+      />
+      <br />
+      <PlatformLink
+        linktext="cloud"
+        linkhref="https://steamcommunity.com/id/cloud361"
+        iconname="steam"
+      />
+    </TableRow>
+  </Table>
   <Description>
     <p>
       Step into a world on the brink of chaos, where the fate of nations hangs
@@ -110,13 +149,17 @@ import image2 from "@assets/games/valorant/picture2.jpg";
       awaits your heroism.
     </p>
   </Description>
-  <Rig title="Information about the Game">
-    <RigEntry component="Developer">Riot Games</RigEntry>
-    <RigEntry component="Publisher">Riot Games</RigEntry>
-    <RigEntry component="Release Date">02.06.2020</RigEntry>
-    <RigEntry component="Genre">Hero shooter, Tactical shooter</RigEntry>
-    <RigEntry component="Official Website">
-      <a href="https://playvalorant.com/">playvalorant.com</a>
-    </RigEntry>
-  </Rig>
+  <Table title="Information about the Game">
+    <TableRow component="Developer">Riot Games</TableRow>
+    <TableRow component="Publisher">Riot Games</TableRow>
+    <TableRow component="Release Date">02.06.2020</TableRow>
+    <TableRow component="Genre">Hero shooter, Tactical shooter</TableRow>
+    <TableRow component="Official Website">
+      <PlatformLink
+        linktext="playvalorant.com"
+        linkhref="https://playvalorant.com/"
+        iconname=""
+      />
+    </TableRow>
+  </Table>
 </Layout>

@@ -1,8 +1,8 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import SectionGrid from "@components/SectionGrid.astro";
-import Rig from "@components/Rig.astro";
-import RigEntry from "@components/RigEntry.astro";
+import Table from "@components/Table.astro";
+import TableRow from "@components/TableRow.astro";
 import Card from "@components/Card.astro";
 ---
 
@@ -118,8 +118,8 @@ import Card from "@components/Card.astro";
       service="Farming Simulator 22"
       description="Pepperidge Farm Remembers"
       svg="fs22_2"
-      buttonhref="https://store.steampowered.com/app/1248130/Farming_Simulator_22/"
-      buttonsuffix="Steam Page"
+      buttonhref="games/fs22"
+      buttonsuffix="More Info"
     />
     <Card
       service="Modern Warfare II"
@@ -168,40 +168,40 @@ import Card from "@components/Card.astro";
     />
   </SectionGrid>
 
-  <Rig
+  <Table
     title="Rig"
     href="https://pcpartpicker.com/user/Nycxin/saved/#view=Bm8rGX"
   >
-    <RigEntry component="CPU">AMD - Ryzen 9 7950X3D 5.7Ghz</RigEntry>
-    <RigEntry component="GPU">
+    <TableRow component="CPU">AMD - Ryzen 9 7950X3D 5.7Ghz</TableRow>
+    <TableRow component="GPU">
       Asus - TUF Gaming GeForce RTX® 4090 OC Edition 24GB GDDR6X
-    </RigEntry>
-    <RigEntry component="RAM">
+    </TableRow>
+    <TableRow component="RAM">
       G.Skill - Trident Z5 Neo 64GB (2 x 32GB) DDR5-6000 CL30
-    </RigEntry>
-    <RigEntry component="Motherboard">
+    </TableRow>
+    <TableRow component="Motherboard">
       Asus - ROG Strix X670E-E Gaming Wifi AM5
-    </RigEntry>
-    <RigEntry component="Storage">
+    </TableRow>
+    <TableRow component="Storage">
       Samsung - 980 PRO NVMe 1TB M.2 2280<br />
       Samsung - 860QVO 2TB 2.5"<br />
       WD Black - SN850X Gaming NVMe 4TB M.2 2280
-    </RigEntry>
-    <RigEntry component="CPU Cooler">
+    </TableRow>
+    <TableRow component="CPU Cooler">
       Corsair - iCUE H150i Elite Capellix XT w/ LCD Upgrade
-    </RigEntry>
-    <RigEntry component="Case">Fractal - Meshify S2 Black - Dark TG</RigEntry>
-    <RigEntry component="Power Supply">
+    </TableRow>
+    <TableRow component="Case">Fractal - Meshify S2 Black - Dark TG</TableRow>
+    <TableRow component="Power Supply">
       Seasonic - Prime Platinum 1300W
-    </RigEntry>
-    <RigEntry component="Main Display">BenQ - 34" Ultrawide EX3415R</RigEntry>
-    <RigEntry component="Secondary Displays">
+    </TableRow>
+    <TableRow component="Main Display">BenQ - 34" Ultrawide EX3415R</TableRow>
+    <TableRow component="Secondary Displays">
       Samsung - LS34J550WQUXEN<br />
       DELL - U2722D
-    </RigEntry>
-    <RigEntry component="Mouse">
+    </TableRow>
+    <TableRow component="Mouse">
       Logitech - G Pro X Superlight Wireless
-    </RigEntry>
-    <RigEntry component="Keyboard">Ducky - One 2 (MX Blue)</RigEntry>
-  </Rig>
+    </TableRow>
+    <TableRow component="Keyboard">Ducky - One 2 (MX Blue)</TableRow>
+  </Table>
 </Layout>

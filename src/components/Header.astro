@@ -2,15 +2,25 @@
 export interface Props {
   heading: string;
   subheading: string;
+  minimal?: string;
 }
 
-const { heading, subheading } = Astro.props;
+const { heading, subheading, minimal } = Astro.props;
 ---
 
-<header id="header">
-  <h1>{heading}</h1>
-  <h2>{subheading}</h2>
-</header>
+{
+  minimal ? (
+    <header id="header" class="minimal">
+      <h1>{heading}</h1>
+      <h2>{subheading}</h2>
+    </header>
+  ) : (
+    <header id="header">
+      <h1>{heading}</h1>
+      <h2>{subheading}</h2>
+    </header>
+  )
+}
 
 <style>
   header {
@@ -20,12 +30,10 @@ const { heading, subheading } = Astro.props;
 
     background-color: var(--color-gray-700);
 
-    background-image:
-      svg-load("../images/logo.svg"), 
+    background-image: svg-load("../images/logo.svg"),
       url("../images/bg/bg400.jpg");
 
-    background-image:
-      svg-load("../images/logo.svg"),
+    background-image: svg-load("../images/logo.svg"),
       image-set(
         url("../images/bg/bg400.avif") type("image/avif"),
         url("../images/bg/bg400.webp") type("image/webp"),
@@ -44,51 +52,85 @@ const { heading, subheading } = Astro.props;
     animation-delay: calc(var(--scroll) * -1s);
   }
 
+  header.minimal {
+    background-image: url("../images/bg/bg400.jpg");
+
+    background-image: image-set(
+      url("../images/bg/bg400.avif") type("image/avif"),
+      url("../images/bg/bg400.webp") type("image/webp"),
+      url("../images/bg/bg400.jpg") type("image/jpeg")
+    );
+    height: auto;
+  }
+
   @media (min-width: 400.01px) {
     header {
-      background-image:
-      svg-load("../images/logo.svg"), 
-      url("../images/bg/bg800.jpg");
+      background-image: svg-load("../images/logo.svg"),
+        url("../images/bg/bg800.jpg");
 
-      background-image:
-        svg-load("../images/logo.svg"),
+      background-image: svg-load("../images/logo.svg"),
         image-set(
           url("../images/bg/bg800.avif") type("image/avif"),
           url("../images/bg/bg800.webp") type("image/webp"),
           url("../images/bg/bg800.jpg") type("image/jpeg")
         );
     }
+
+    header.minimal {
+      background-image: url("../images/bg/bg800.jpg");
+
+      background-image: image-set(
+        url("../images/bg/bg800.avif") type("image/avif"),
+        url("../images/bg/bg800.webp") type("image/webp"),
+        url("../images/bg/bg800.jpg") type("image/jpeg")
+      );
+    }
   }
 
   @media (min-width: 800.01px) {
     header {
-      background-image:
-      svg-load("../images/logo.svg"), 
-      url("../images/bg/bg1300.jpg");
+      background-image: url("../images/bg/bg1300.jpg");
 
-      background-image:
-        svg-load("../images/logo.svg"),
+      background-image: svg-load("../images/logo.svg"),
         image-set(
           url("../images/bg/bg1300.avif") type("image/avif"),
           url("../images/bg/bg1300.webp") type("image/webp"),
           url("../images/bg/bg1300.jpg") type("image/jpeg")
         );
     }
+
+    header.minimal {
+      background-image: url("../images/bg/bg1300.jpg");
+
+      background-image: image-set(
+        url("../images/bg/bg1300.avif") type("image/avif"),
+        url("../images/bg/bg1300.webp") type("image/webp"),
+        url("../images/bg/bg1300.jpg") type("image/jpeg")
+      );
+    }
   }
 
   @media (min-width: 1300.01px) {
     header {
-      background-image:
-      svg-load("../images/logo.svg"), 
-      url("../images/bg/bg2500.jpg");
+      background-image: svg-load("../images/logo.svg"),
+        url("../images/bg/bg2500.jpg");
 
-      background-image:
-        svg-load("../images/logo.svg"),
+      background-image: svg-load("../images/logo.svg"),
         image-set(
           url("../images/bg/bg2500.avif") type("image/avif"),
           url("../images/bg/bg2500.webp") type("image/webp"),
           url("../images/bg/bg2500.jpg") type("image/jpeg")
         );
+    }
+
+    header.minimal {
+      background-image: url("../images/bg/bg2500.jpg");
+
+      background-image: image-set(
+        url("../images/bg/bg2500.avif") type("image/avif"),
+        url("../images/bg/bg2500.webp") type("image/webp"),
+        url("../images/bg/bg2500.jpg") type("image/jpeg")
+      );
     }
   }
 

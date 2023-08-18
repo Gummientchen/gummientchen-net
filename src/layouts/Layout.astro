@@ -17,9 +17,10 @@ export interface Props {
   description: string;
   heading: string;
   subheading: string;
+  minimal?: string;
 }
 
-const { title, description, heading, subheading } = Astro.props;
+const { title, description, heading, subheading, minimal } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -49,6 +50,7 @@ const { title, description, heading, subheading } = Astro.props;
       <Header
         heading={heading}
         subheading={subheading}
+        minimal={minimal}
         transition:persist="header"
       />
       <slot />

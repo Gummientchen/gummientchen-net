@@ -1,0 +1,146 @@
+---
+import Layout from "@layouts/Layout.astro";
+import HeroImage from "@components/HeroImage.astro";
+import Description from "@components/Description.astro";
+import Table from "@components/Table.astro";
+import TableRow from "@components/TableRow.astro";
+import PlatformLink from "@components/PlatformLink.astro";
+
+import DescriptionPicture from "@components/DescriptionPicture.astro";
+
+import image1 from "@assets/games/fs22/picture1.png";
+import image2 from "@assets/games/fs22/picture2.png";
+---
+
+<Layout
+  title="Gummientchen - Farming Simulator 22"
+  description="Join Gummientchen on a gaming odyssey like no other. From dominating battlefields to unraveling epic quests, Gummientchen explores pixel realms, leaving no virtual stone unturned."
+  heading="Farming Simulator 22"
+  subheading="Where my plants have more followers than I do!"
+  minimal="true"
+>
+  <HeroImage svg="fs22_2" />
+  <Table title="My Stats">
+    <TableRow component="Playtime">376 hours (18.08.2023)</TableRow>
+    <TableRow component="Platform">Steam</TableRow>
+  </Table>
+  <Description>
+    <p>
+      <strong
+        >Unveil Your Inner Farmer in Farming Simulator 22: A Cultivation
+        Odyssey!</strong
+      >
+    </p>
+
+    <p>
+      Step into the captivating realm of Farming Simulator 22, where the world
+      of agriculture comes to life with a serious yet endearing charm. Developed
+      by GIANTS Software, this exceptional gaming series lets you trade your
+      keyboard for a tractor as you embark on a journey of growth, challenges,
+      and endless rewards.
+    </p>
+
+    <h3>The Cultivating Canvas Awaits:</h3>
+    <p>
+      Your digital farmland stretches as far as the eye can see, a blank canvas
+      ripe for your farming aspirations. Will you sow the seeds of success in
+      fields of wheat, or dive into the meticulous art of grapevine cultivation?
+      The choice is yours, as you nurture your chosen crops from seedlings to
+      bountiful harvests.
+    </p>
+
+    <DescriptionPicture
+      src={image1}
+      alt="Powerful combine harvester in action, gliding across an expansive golden field in Farming Simulator 22. Giants Software©"
+    />
+
+    <h3>Rise to Agrarian Eminence:</h3>
+    <p>
+      Don the hat of a modern-day farmer and watch your humble farmstead evolve
+      into a sprawling empire. From raising livestock to reaping the rewards of
+      bountiful crops, your every decision shapes your destiny. Upgrade your
+      arsenal of vehicles and machinery, shedding the shackles of outdated
+      equipment for the marvels of modern farming technology.
+    </p>
+
+    <h3>Navigate a World of Wonder:</h3>
+    <p>
+      Explore meticulously crafted American and European landscapes, each a
+      masterpiece in itself. The beauty of nature is at your fingertips, whether
+      you're tending to your fields or traversing the terrain in over 400
+      intricately detailed vehicles.
+    </p>
+
+    <h3>Challenges that Fuel Your Ambition:</h3>
+    <p>
+      Embark on dynamically generated missions that demand your wit and
+      precision. Experience the thrill of racing against time while mowing
+      fields, fertilizing crops, and delivering cargo. The clock ticks, but the
+      rewards are immense for those who thrive under pressure.
+    </p>
+
+    <h3>Forge Alliances, Multiply Success:</h3>
+    <p>
+      Why plow alone when you can plow together? Engage in multiplayer mode and
+      let your friends become your farming allies. Collaborate, exchange
+      insights, and watch your farms flourish as a testament to collective
+      effort.
+    </p>
+
+    <h3>The Symphony of Seasons:</h3>
+    <p>
+      Witness the passage of time through a dynamic seasonal cycle, a living
+      testament to the ever-changing nature of your digital realm. With the
+      passing of spring, the heat of summer, the hues of autumn, and the chill
+      of winter, your strategies must adapt, and your landscapes transform.
+    </p>
+
+    <DescriptionPicture
+      src={image2}
+      alt="Vibrant red Massey Ferguson tractor gracefully towing a precision seeder across a sprawling green field in the virtual realm of Farming Simulator 22. Giants Software©"
+    />
+
+    <h3>An Epic Journey Unfolds:</h3>
+    <p>
+      As Farming Simulator 22 continues to bloom, anticipate forthcoming
+      expansions that promise even greater excitement. Traverse new landscapes,
+      cultivate novel crops, and embrace fresh challenges that await in the
+      vibrant world of Zielonka.
+    </p>
+
+    <h3>A Symphony of Farming Excellence:</h3>
+    <p>
+      Whether you're a seasoned farmhand or a fledgling agrarian, Farming
+      Simulator 22 invites you into a realm where the harmony of cultivation
+      meets the thrill of simulation. Let "Gummientchen" guide you through this
+      heartwarming journey, where growth, triumph, and the simple joy of farming
+      await.
+    </p>
+
+    <p>
+      Seize the plow, grasp the reins, and embark on your cultivation odyssey in
+      Farming Simulator 22. The fields are yours to tend, the dreams yours to
+      harvest!
+    </p>
+  </Description>
+  <Table title="Information about the Game">
+    <TableRow component="Developer">Giants Software</TableRow>
+    <TableRow component="Publisher">Giants Software</TableRow>
+    <TableRow component="Release Date">22.11.2021</TableRow>
+    <TableRow component="Genre">Simulation</TableRow>
+    <TableRow component="Official Website">
+      <PlatformLink
+        linktext="farming-simulator.com"
+        linkhref="https://www.farming-simulator.com/"
+        iconname=""
+      />
+    </TableRow>
+    <TableRow component="Steam Store Page">
+      <PlatformLink
+        linktext="Farming Simulator 22 on Steam"
+        linkhref="https://store.steampowered.com/app/1248130/Farming_Simulator_22/"
+        iconname="steam"
+      />
+    </TableRow>
+  </Table>
+</Layout>

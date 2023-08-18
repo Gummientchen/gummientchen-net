@@ -1,0 +1,121 @@
+---
+import { Icon } from "astro-icon";
+
+export interface Props {
+  iconname?: string;
+  linktext: string;
+  linkhref: string;
+}
+
+const { iconname = "", linkhref } = Astro.props;
+let { linktext } = Astro.props;
+
+if (!linktext) {
+  linktext = linkhref;
+}
+---
+
+{
+  iconname == "steam" && (
+    <>
+      <a href={linkhref} target="_blank" rel="noopener">
+        {linktext}
+      </a>
+      <Icon name="steam" />
+    </>
+  )
+}
+
+{
+  iconname == "xbox" && (
+    <>
+      <a href={linkhref} target="_blank" rel="noopener">
+        {linktext}
+      </a>
+      <Icon name="microsoft-xbox" />
+    </>
+  )
+}
+
+{
+  iconname == "riot" && (
+    <>
+      <a href={linkhref} target="_blank" rel="noopener">
+        {linktext}
+      </a>
+      <Icon name="riotgames" />
+    </>
+  )
+}
+
+{
+  iconname == "msstore" && (
+    <>
+      <a href={linkhref} target="_blank" rel="noopener">
+        {linktext}
+      </a>
+      <Icon name="microsoft" />
+    </>
+  )
+}
+
+{
+  iconname == "twitch" && (
+    <>
+      <a href={linkhref} target="_blank" rel="noopener">
+        {linktext}
+      </a>
+      <Icon name="twitch" />
+    </>
+  )
+}
+
+{
+  iconname == "twitter" && (
+    <>
+      <a href={linkhref} target="_blank" rel="noopener">
+        {linktext}
+      </a>
+      <Icon name="twitter" />
+    </>
+  )
+}
+
+{
+  iconname == "youtube" && (
+    <>
+      <a href={linkhref} target="_blank" rel="noopener">
+        {linktext}
+      </a>
+      <Icon name="youtube" />
+    </>
+  )
+}
+
+{
+  iconname == "" && (
+    <>
+      <a href={linkhref} target="_blank" rel="noopener">
+        {linktext}
+      </a>
+      <Icon name="open-in-new" />
+    </>
+  )
+}
+
+<style>
+  [astro-icon] {
+    width: 1.25em;
+    height: 1.25em;
+    padding: 0 0.25em;
+    line-height: 1.25em;
+    vertical-align: middle;
+    display: inline-block;
+    color: var(--color-gray-300);
+  }
+
+  a {
+    color: var(--color-gray-200);
+    text-decoration: none;
+  }
+</style>

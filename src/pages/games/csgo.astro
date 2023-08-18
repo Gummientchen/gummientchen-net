@@ -2,8 +2,9 @@
 import Layout from "@layouts/Layout.astro";
 import HeroImage from "@components/HeroImage.astro";
 import Description from "@components/Description.astro";
-import Rig from "@components/Rig.astro";
-import RigEntry from "@components/RigEntry.astro";
+import Table from "@components/Table.astro";
+import TableRow from "@components/TableRow.astro";
+import PlatformLink from "@components/PlatformLink.astro";
 
 import DescriptionPicture from "@components/DescriptionPicture.astro";
 
@@ -15,10 +16,43 @@ import image2 from "@assets/games/csgo/picture2.jpg";
 <Layout
   title="Gummientchen - CS:GO"
   description="Join Gummientchen on a gaming odyssey like no other. From dominating battlefields to unraveling epic quests, Gummientchen explores pixel realms, leaving no virtual stone unturned."
-  heading="Gummientchen"
+  heading="CS:GO"
   subheading="I don't have a smoke - then fucking buy one"
+  minimal="true"
 >
-  <HeroImage svg="csgo" />
+  <HeroImage svg="csgo" fill="true" />
+  <Table title="My Stats">
+    <TableRow component="Playtime">48 hours (18.08.2023)</TableRow>
+    <TableRow component="Platform">Steam</TableRow>
+    <TableRow component="Playing with">
+      <PlatformLink
+        linktext="SmashinVP"
+        linkhref="https://steamcommunity.com/id/SmashinVP"
+        iconname="steam"
+      /> /
+      <PlatformLink
+        linktext="lwt2"
+        linkhref="https://steamcommunity.com/id/lwt2"
+        iconname="steam"
+      /> /
+      <PlatformLink
+        linktext="Eas"
+        linkhref="https://steamcommunity.com/id/Eas_"
+        iconname="steam"
+      />
+      <br />
+      <PlatformLink
+        linktext="Ruvebo"
+        linkhref="https://steamcommunity.com/id/Ruvebo"
+        iconname="steam"
+      /> /
+      <PlatformLink
+        linktext="Raron"
+        linkhref="https://steamcommunity.com/id/raron1"
+        iconname="steam"
+      />
+    </TableRow>
+  </Table>
   <Description>
     <p>
       Immerse yourself in the heart-pounding adventure of Counter-Strike: Global
@@ -86,4 +120,24 @@ import image2 from "@assets/games/csgo/picture2.jpg";
       victory? The world of CS:GO is calling – answer it and become a legend!
     </p>
   </Description>
+  <Table title="Information about the Game">
+    <TableRow component="Developer">Valve</TableRow>
+    <TableRow component="Publisher">Valve</TableRow>
+    <TableRow component="Release Date">21.08.2012</TableRow>
+    <TableRow component="Genre">Tactical first-person shooter</TableRow>
+    <TableRow component="Official Website">
+      <PlatformLink
+        linktext="counter-strike.net"
+        linkhref="https://www.counter-strike.net/"
+        iconname=""
+      />
+    </TableRow>
+    <TableRow component="Steam Store Page">
+      <PlatformLink
+        linktext="Counter-Strike: Global Offensive on Steam"
+        linkhref="https://store.steampowered.com/app/730/CounterStrike_Global_Offensive/"
+        iconname="steam"
+      />
+    </TableRow>
+  </Table>
 </Layout>

@@ -2,8 +2,9 @@
 import Layout from "@layouts/Layout.astro";
 import HeroImage from "@components/HeroImage.astro";
 import Description from "@components/Description.astro";
-import Rig from "@components/Rig.astro";
-import RigEntry from "@components/RigEntry.astro";
+import Table from "@components/Table.astro";
+import TableRow from "@components/TableRow.astro";
+import PlatformLink from "@components/PlatformLink.astro";
 
 import DescriptionPicture from "@components/DescriptionPicture.astro";
 
@@ -14,15 +15,32 @@ import image2 from "@assets/games/rocketleague/picture2.jpg";
 <Layout
   title="Gummientchen - Rocket League"
   description="Join Gummientchen on a gaming odyssey like no other. From dominating battlefields to unraveling epic quests, Gummientchen explores pixel realms, leaving no virtual stone unturned."
-  heading="Gummientchen"
+  heading="Rocket League"
   subheading="The road to plat is paved with a stuck gas pedal"
+  minimal="true"
 >
-  <HeroImage svg="rocketleague_2" />
-  <Rig title="My Stats">
-    <RigEntry component="Playtime">1083 hours (18.08.2023)</RigEntry>
-    <RigEntry component="Platform">Steam</RigEntry>
-    <RigEntry component="Playing with">SmashinVP / lwt2 / Eas</RigEntry>
-  </Rig>
+  <HeroImage svg="rocketleague_2" fill="true" />
+  <Table title="My Stats">
+    <TableRow component="Playtime">1083 hours (18.08.2023)</TableRow>
+    <TableRow component="Platform">Steam</TableRow>
+    <TableRow component="Playing with">
+      <PlatformLink
+        linktext="SmashinVP"
+        linkhref="https://steamcommunity.com/id/SmashinVP"
+        iconname="steam"
+      /> /
+      <PlatformLink
+        linktext="lwt2"
+        linkhref="https://steamcommunity.com/id/lwt2"
+        iconname="steam"
+      /> /
+      <PlatformLink
+        linktext="Eas"
+        linkhref="https://steamcommunity.com/id/Eas_"
+        iconname="steam"
+      />
+    </TableRow>
+  </Table>
   <Description>
     <p>
       Introducing... <strong
@@ -102,13 +120,17 @@ import image2 from "@assets/games/rocketleague/picture2.jpg";
       is your destiny. Get ready to launch into the future of sports gaming!
     </p>
   </Description>
-  <Rig title="Information about the Game">
-    <RigEntry component="Developer">Psyonix</RigEntry>
-    <RigEntry component="Publisher">Psyonix</RigEntry>
-    <RigEntry component="Release Date">07.07.2015</RigEntry>
-    <RigEntry component="Genre">Sports</RigEntry>
-    <RigEntry component="Official Website">
-      <a href="https://www.rocketleague.com/">rocketleague.com</a>
-    </RigEntry>
-  </Rig>
+  <Table title="Information about the Game">
+    <TableRow component="Developer">Psyonix</TableRow>
+    <TableRow component="Publisher">Psyonix</TableRow>
+    <TableRow component="Release Date">07.07.2015</TableRow>
+    <TableRow component="Genre">Sports</TableRow>
+    <TableRow component="Official Website">
+      <PlatformLink
+        linktext="rocketleague.com"
+        linkhref="https://www.rocketleague.com/"
+        iconname=""
+      />
+    </TableRow>
+  </Table>
 </Layout>
