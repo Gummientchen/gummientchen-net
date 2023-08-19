@@ -24,23 +24,7 @@ const { heading, subheading, minimal } = Astro.props;
 
 <style>
   header {
-    background-repeat: no-repeat;
-    background-position: center 15%;
-    background-size: cover;
-
-    background-color: var(--color-gray-700);
-
-    background-image: svg-load("../images/logo.svg"),
-      url("../images/bg/bg400.jpg");
-
-    background-image: svg-load("../images/logo.svg"),
-      image-set(
-        url("../images/bg/bg400.avif") type("image/avif"),
-        url("../images/bg/bg400.webp") type("image/webp"),
-        url("../images/bg/bg400.jpg") type("image/jpeg")
-      );
-
-    height: clamp(20rem, 50vw, 70rem);
+    height: clamp(17rem, 50vw, 70rem);
 
     position: sticky;
     top: 0;
@@ -52,86 +36,59 @@ const { heading, subheading, minimal } = Astro.props;
     animation-delay: calc(var(--scroll) * -1s);
   }
 
+  header:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-image: url("../images/bg/nightsky.svg");
+    background-position: 0% 40%;
+    background-size: cover;
+    filter: blur(3px);
+  }
+
+  header:after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 1;
+    z-index: -1;
+    background-image: svg-load("../images/logo.svg");
+    background-position: center 25%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* filter: brightness(var(--header-image-brightness-inner)) blur(4px)
+      saturate(var(--header-image-saturation-inner))
+      hue-rotate(var(--header-image-hue-inner)); */
+  }
+
   header.minimal {
-    background-image: url("../images/bg/bg400.jpg");
-
-    background-image: image-set(
-      url("../images/bg/bg400.avif") type("image/avif"),
-      url("../images/bg/bg400.webp") type("image/webp"),
-      url("../images/bg/bg400.jpg") type("image/jpeg")
-    );
+    background: none;
     height: auto;
+
+    --header-image-position-inner: var(--header-position-hue, 40%);
+    --header-image-hue-inner: var(--header-image-hue, 0deg);
+    --header-image-brightness-inner: var(--header-image-brightness, 0.5);
+    --header-image-saturation-inner: var(--header-image-saturation, 1.25);
   }
 
-  @media (min-width: 400.01px) {
-    header {
-      background-image: svg-load("../images/logo.svg"),
-        url("../images/bg/bg800.jpg");
-
-      background-image: svg-load("../images/logo.svg"),
-        image-set(
-          url("../images/bg/bg800.avif") type("image/avif"),
-          url("../images/bg/bg800.webp") type("image/webp"),
-          url("../images/bg/bg800.jpg") type("image/jpeg")
-        );
-    }
-
-    header.minimal {
-      background-image: url("../images/bg/bg800.jpg");
-
-      background-image: image-set(
-        url("../images/bg/bg800.avif") type("image/avif"),
-        url("../images/bg/bg800.webp") type("image/webp"),
-        url("../images/bg/bg800.jpg") type("image/jpeg")
-      );
-    }
+  header.minimal:after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-image: url("../images/bg/nightsky.svg");
+    background-position: 0% var(--header-image-position-inner);
+    background-size: cover;
+    filter: brightness(var(--header-image-brightness-inner)) blur(4px)
+      saturate(var(--header-image-saturation-inner))
+      hue-rotate(var(--header-image-hue-inner));
   }
 
-  @media (min-width: 800.01px) {
-    header {
-      background-image: url("../images/bg/bg1300.jpg");
-
-      background-image: svg-load("../images/logo.svg"),
-        image-set(
-          url("../images/bg/bg1300.avif") type("image/avif"),
-          url("../images/bg/bg1300.webp") type("image/webp"),
-          url("../images/bg/bg1300.jpg") type("image/jpeg")
-        );
-    }
-
-    header.minimal {
-      background-image: url("../images/bg/bg1300.jpg");
-
-      background-image: image-set(
-        url("../images/bg/bg1300.avif") type("image/avif"),
-        url("../images/bg/bg1300.webp") type("image/webp"),
-        url("../images/bg/bg1300.jpg") type("image/jpeg")
-      );
-    }
-  }
-
-  @media (min-width: 1300.01px) {
-    header {
-      background-image: svg-load("../images/logo.svg"),
-        url("../images/bg/bg2500.jpg");
-
-      background-image: svg-load("../images/logo.svg"),
-        image-set(
-          url("../images/bg/bg2500.avif") type("image/avif"),
-          url("../images/bg/bg2500.webp") type("image/webp"),
-          url("../images/bg/bg2500.jpg") type("image/jpeg")
-        );
-    }
-
-    header.minimal {
-      background-image: url("../images/bg/bg2500.jpg");
-
-      background-image: image-set(
-        url("../images/bg/bg2500.avif") type("image/avif"),
-        url("../images/bg/bg2500.webp") type("image/webp"),
-        url("../images/bg/bg2500.jpg") type("image/jpeg")
-      );
-    }
+  header.minimal:before {
+    content: "";
+    background: none;
+    filter: none;
   }
 
   @keyframes fade {
@@ -144,6 +101,11 @@ const { heading, subheading, minimal } = Astro.props;
   h2 {
     text-align: center;
     margin: 0;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
+    color: var(--header-font-color);
+
+    /* -webkit-text-stroke: 1px var(--color-gray-400);
+    text-stroke: 1px var(--color-gray-400); */
   }
 
   h1 {
@@ -151,7 +113,7 @@ const { heading, subheading, minimal } = Astro.props;
     padding-block-start: 1.5em;
     padding-block-end: 0.25em;
     padding-inline: 1em;
-    color: var(--header-font-color);
+
     font-weight: 600;
     line-height: 1.2;
   }
@@ -160,19 +122,18 @@ const { heading, subheading, minimal } = Astro.props;
     font-size: clamp(1.2rem, 3vw, 5rem);
     padding-block-end: 1em;
     padding-inline: 1em;
-    color: var(--header-font-color);
     font-weight: 500;
     line-height: 1.2;
   }
 
   @media (min-width: 15rem) {
-    header {
+    header:after {
       background-position: center 15%;
     }
   }
 
   @media (min-width: 33rem) {
-    header {
+    header:after {
       background-position: center 45%;
     }
 

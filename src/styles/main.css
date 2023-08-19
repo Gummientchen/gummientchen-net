@@ -8,8 +8,9 @@
   --color-gray-300: hsl(0, 0%, 70%);
   --color-gray-200: hsl(0, 0%, 80%);
   --color-gray-100: hsl(0, 0%, 90%);
+  --color-gray-000: hsl(0, 0%, 100%);
 
-  --header-font-color: var(--color-gray-100);
+  --header-font-color: var(--color-gray-000);
   --rig-background-color: hsl(0, 0%, 5%);
   --rig-font-color: var(--color-gray-100);
 

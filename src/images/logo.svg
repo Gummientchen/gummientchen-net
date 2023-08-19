@@ -147,6 +147,6 @@
             </g>
         </g>
     </g>
-    <path style='fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;animation:wave 4s linear infinite;fill:#09f'
+    <path style='fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;animation:wave 4s linear infinite;fill:#0f245c'
           d='M1024 550C746 547 306 700 0 700s-746-147-1024-150-719 150-1024 150v324h4096V700c-306 0-746-147-1024-150Z' />
 </svg>
