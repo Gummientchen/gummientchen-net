@@ -1,0 +1,145 @@
+---
+import Layout from "@layouts/Layout.astro";
+import HeroImage from "@components/HeroImage.astro";
+import Description from "@components/Description.astro";
+import Table from "@components/Table.astro";
+import TableRow from "@components/TableRow.astro";
+import PlatformLink from "@components/PlatformLink.astro";
+
+import DescriptionPicture from "@components/DescriptionPicture.astro";
+
+import image1 from "@assets/games/skyrim/picture1.jpg";
+import image2 from "@assets/games/skyrim/picture2.webp";
+import image3 from "@assets/games/skyrim/picture3.jpg";
+---
+
+<style>
+  :root {
+    --header-position-hue: 35%;
+    --header-image-hue: 15deg;
+    --header-image-brightness: 0.7;
+    --header-image-saturation: 1.5;
+  }
+</style>
+
+<Layout
+  title="Gummientchen - Skyrim"
+  description="Join Gummientchen on a gaming odyssey like no other. From dominating battlefields to unraveling epic quests, Gummientchen explores pixel realms, leaving no virtual stone unturned."
+  heading="Skyrim"
+  subheading="Dragonborn, huh? Was it your ma or your pa that was the dragon?"
+  minimal="true"
+>
+  <HeroImage svg="skyrim" />
+  <Table title="My Stats">
+    <TableRow component="Playtime">57 hours (18.08.2023)</TableRow>
+    <TableRow component="Platform">Steam</TableRow>
+  </Table>
+  <Description>
+    <p>
+      Immerse yourself in the fantastical world of The Elder Scrolls V: Skyrim,
+      an awe-inspiring epic that intertwines courage, magic, and destiny. Embark
+      on a journey that fuses the serious and the adorable, creating a whimsical
+      tapestry perfect for every video game enthusiast.
+    </p>
+
+    <p>
+      In this sprawling action role-playing masterpiece, crafted by the
+      ingenious minds at Bethesda Game Studios, you will step into the shoes of
+      the fabled Dragonborn. Behold, for Skyrim beckons, a frigid land of
+      towering mountains and ancient secrets. Here, the echoes of an eventful
+      past ripple through the very fabric of reality. 200 years after the
+      turmoil of The Elder Scrolls IV: Oblivion, a new saga unfolds.
+    </p>
+
+    <DescriptionPicture
+      src={image1}
+      alt="Courageous Dragonborn poised for battle, facing a majestic flying dragon amidst the snowy peaks of Skyrim's mountains. Bethesda©"
+    />
+
+    <p>
+      Prepare to face Alduin the World-Eater, a dragon prophesied to devour the
+      world. As the Dragonborn, your destiny is etched in fire and scales, as
+      you take up arms against this cataclysmic force. Yet, amidst the
+      snowflakes and dragon roars, lies a world brimming with adventures beyond
+      imagination.
+    </p>
+
+    <p>
+      Explore the northern province of Tamriel, the breathtaking land of Skyrim.
+      Venture forth into dense forests, treacherous dungeons, towering cities,
+      and remote villages. Traverse the land on horseback, or whisk away through
+      a fast-travel system that makes your journey all the more exhilarating.
+      Choose your path and destiny with every step, for the choices you make
+      echo across the realm.
+    </p>
+
+    <p>
+      Create a hero all your own with races ranging from human to the mystical
+      elves and orcs. Customize your appearance, and brace yourself for a world
+      where health, magicka, and stamina dance in a delicate balance. Engage in
+      battles that demand strategy, where wielding weapons and spells can mean
+      the difference between life and a fiery end.
+    </p>
+
+    <DescriptionPicture
+      src={image2}
+      alt="Valiant Dragonborn engaged in an epic battle with a colossal dragon in the enchanting world of Skyrim. Bethesda©"
+    />
+
+    <p>
+      Amidst the frosty landscapes, you'll encounter a vibrant cast of
+      non-player characters (NPCs). Engage in conversations that lead to epic
+      quests or treasured locations. Forge alliances, even marry if your heart
+      so desires, but remember, your choices may shape your fate in ways untold.
+    </p>
+
+    <p>
+      Join powerful factions such as the Companions, wield magic at the College
+      of Winterhold, or embrace the shadows with the Thieves Guild. Your journey
+      might even lead you to the clandestine paths of the Dark Brotherhood or
+      the battlefield of the civil war between the Imperial Legion and the
+      Stormcloaks.
+    </p>
+
+    <DescriptionPicture
+      src={image3}
+      alt="Serene forest nestled before majestic mountains in Skyrim. A meandering path winds through the lush woodland, inviting adventurers to explore the breathtaking natural beauty of the landscape. Bethesda©"
+    />
+
+    <p>
+      As dragons stir from their ancient slumber, prepare for battles that will
+      shake the heavens. Master the art of "shouts," the powerful spells
+      inherited from these majestic beasts. Absorb their souls to harness their
+      strength and unlock the potential hidden within you.
+    </p>
+
+    <p>
+      Unveil secrets, uncover the past, and rise as the legend Skyrim needs.
+      With downloadable content expanding the horizons of this world and
+      remastered versions offering stunning visuals, your adventure knows no
+      bounds. So, let your heart take flight on the wings of a dragon, for
+      within the embrace of "Gummientchen's" virtual realm, you are the hero
+      that Skyrim deserves.
+    </p>
+  </Description>
+  <Table title="Information about the Game">
+    <TableRow component="Developer">Bethesda Game Studios</TableRow>
+    <TableRow component="Publisher">Bethesda Softworks</TableRow>
+    <TableRow component="Release Date">11.11.2011</TableRow>
+    <TableRow component="Genre">Action role-playing</TableRow>
+    <TableRow component="Official Website">
+      <PlatformLink
+        linktext="bethesda.net"
+        linkhref="https://elderscrolls.bethesda.net/en/skyrim"
+        iconname=""
+      />
+    </TableRow>
+    <TableRow component="Steam Store Page">
+      <PlatformLink
+        linktext="Skyrim on Steam"
+        linkhref="https://store.steampowered.com/app/489830/The_Elder_Scrolls_V_Skyrim_Special_Edition/"
+        iconname="steam"
+      />
+    </TableRow>
+  </Table>
+</Layout>
