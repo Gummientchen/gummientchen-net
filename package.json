@@ -8,7 +8,8 @@
     "start": "astro dev --host",
     "build": "astro build",
     "preview": "astro preview --host",
-    "astro": "astro"
+    "astro": "astro",
+    "test:e2e": "playwright test"
   },
   "dependencies": {
     "@astrojs/image": "^0.17.3",
@@ -19,5 +20,8 @@
     "postcss-inline-svg": "^6.0.0",
     "sharp": "^0.32.5",
     "svgo": "2.8.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.37.1"
   }
 }
