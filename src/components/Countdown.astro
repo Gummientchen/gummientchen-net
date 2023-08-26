@@ -105,7 +105,7 @@ const {
     let attrMinutes = document.getElementById("time").dataset.minutes;
     let attrSeconds = document.getElementById("time").dataset.seconds;
 
-    let timer = setInterval(() => {
+    function updateCountdown() {
       let now = new Date(
         Date.UTC(
           attrYear,
@@ -150,7 +150,10 @@ const {
         document.getElementById("time").style.display = "none";
         document.getElementById("finished").style.display = "block";
       }
-    }, 1000);
+    }
+
+    let timer = setInterval(updateCountdown, 1000);
+    updateCountdown();
   </script>
 </section>
 
