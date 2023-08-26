@@ -19,5 +19,8 @@
     "postcss-inline-svg": "^6.0.0",
     "sharp": "^0.32.5",
     "svgo": "2.8.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.37.1"
   }
 }

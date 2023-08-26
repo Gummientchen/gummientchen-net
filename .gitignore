@@ -21,3 +21,6 @@ pnpm-debug.log*
 
 # Custom paths and files
 src/images/original/
+/test-results/
+/playwright-report/
+/playwright/.cache/
