@@ -8,7 +8,8 @@
     "start": "astro dev --host",
     "build": "astro build",
     "preview": "astro preview --host",
-    "astro": "astro"
+    "astro": "astro",
+    "test:e2e": "playwright test"
   },
   "dependencies": {
     "@astrojs/image": "^0.17.3",
