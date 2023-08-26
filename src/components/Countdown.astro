@@ -1,0 +1,298 @@
+---
+export interface Props {
+  title?: string;
+  message?: string;
+  colorDays?: string;
+  colorHours?: string;
+  colorMinutes?: string;
+  colorSeconds?: string;
+  year: string;
+  month: string;
+  day: string;
+  hours: string;
+  minutes: string;
+  seconds: string;
+}
+
+const {
+  title = "Countdown",
+  message = "Countdown Finished!",
+  colorDays = "#FFF",
+  colorHours = "#FFF",
+  colorMinutes = "#FFF",
+  colorSeconds = "#FFF",
+  year = 2024,
+  month = 1,
+  day = 1,
+  hours = 0,
+  minutes = 0,
+  seconds = 0,
+} = Astro.props;
+---
+
+<section>
+  <div class="wrapper">
+    <h2>{title}.</h2>
+    <div
+      class="countdown_wrapper"
+      id="time"
+      data-year={year}
+      data-month={month}
+      data-day={day}
+      data-hours={hours}
+      data-minutes={minutes}
+      data-seconds={seconds}
+    >
+      <div class="circle colorDays">
+        <div class="dots day_dot"></div>
+        <svg>
+          <circle cx="70" cy="70" r="70"></circle>
+          <circle cx="70" cy="70" r="70" id="dayCircle"></circle>
+        </svg>
+        <div id="days">00<br /><span>Days</span></div>
+      </div>
+      <div class="circle colorHours">
+        <div class="dots hour_dot"></div>
+        <svg>
+          <circle cx="70" cy="70" r="70"></circle>
+          <circle cx="70" cy="70" r="70" id="hourCircle"></circle>
+        </svg>
+        <div id="hours">00<br /><span>Hours</span></div>
+      </div>
+      <div class="circle colorMinutes">
+        <div class="dots minute_dot"></div>
+        <svg>
+          <circle cx="70" cy="70" r="70"></circle>
+          <circle cx="70" cy="70" r="70" id="minuteCircle"></circle>
+        </svg>
+        <div id="minutes">00<br /><span>Minutes</span></div>
+      </div>
+      <div class="circle colorSeconds">
+        <div class="dots second_dot"></div>
+        <svg>
+          <circle cx="70" cy="70" r="70"></circle>
+          <circle cx="70" cy="70" r="70" id="secondCircle"></circle>
+        </svg>
+        <div id="seconds">00<br /><span>Seconds</span></div>
+      </div>
+    </div>
+    <div class="countdown_finished" id="finished">
+      {message}
+    </div>
+  </div>
+  <script is:inline>
+    let countdown_days = document.getElementById("days");
+    let countdown_hours = document.getElementById("hours");
+    let countdown_minutes = document.getElementById("minutes");
+    let countdown_seconds = document.getElementById("seconds");
+
+    let dayCircle = document.getElementById("dayCircle");
+    let hourCircle = document.getElementById("hourCircle");
+    let minuteCircle = document.getElementById("minuteCircle");
+    let secondCircle = document.getElementById("secondCircle");
+
+    let day_dot = document.querySelector(".day_dot");
+    let hour_dot = document.querySelector(".hour_dot");
+    let minute_dot = document.querySelector(".minute_dot");
+    let second_dot = document.querySelector(".second_dot");
+
+    let endDate = "09/01/2023 00:00:00"; // date format mm/dd/yyyy hh:mm:ss
+
+    let attrYear = document.getElementById("time").dataset.year;
+    let attrMonth = document.getElementById("time").dataset.month;
+    let attrDay = document.getElementById("time").dataset.day;
+    let attrHours = document.getElementById("time").dataset.hours;
+    let attrMinutes = document.getElementById("time").dataset.minutes;
+    let attrSeconds = document.getElementById("time").dataset.seconds;
+
+    let timer = setInterval(() => {
+      let now = new Date(
+        Date.UTC(
+          attrYear,
+          attrMonth - 1,
+          attrDay,
+          attrHours,
+          attrMinutes,
+          attrSeconds
+        )
+      ).getTime();
+      let countDown = new Date().getTime();
+      let distance = now - countDown;
+
+      // time caluclation for days, hours, minutes and seconds
+      let daysLeft = Math.floor(distance / (1000 * 60 * 60 * 24));
+      let hoursLeft = Math.floor(
+        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      );
+      let minutesLeft = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      let secondsLeft = Math.floor((distance % (1000 * 60)) / 1000);
+
+      // output the resilt in element with id
+      countdown_days.innerHTML = daysLeft + "<br /><span>Days</span>";
+      countdown_hours.innerHTML = hoursLeft + "<br /><span>Hours</span>";
+      countdown_minutes.innerHTML = minutesLeft + "<br /><span>Minutes</span>";
+      countdown_seconds.innerHTML = secondsLeft + "<br /><span>Seconds</span>";
+
+      // animate stroke
+      dayCircle.style.strokeDashoffset = 440 - (440 * daysLeft) / 365;
+      hourCircle.style.strokeDashoffset = 440 - (440 * hoursLeft) / 24;
+      minuteCircle.style.strokeDashoffset = 440 - (440 * minutesLeft) / 60;
+      secondCircle.style.strokeDashoffset = 440 - (440 * secondsLeft) / 60;
+
+      // animate circles
+      day_dot.style.transform = `rotateZ(${daysLeft * 0.986}deg)`;
+      hour_dot.style.transform = `rotateZ(${hoursLeft * 15}deg)`;
+      minute_dot.style.transform = `rotateZ(${minutesLeft * 6}deg)`;
+      second_dot.style.transform = `rotateZ(${secondsLeft * 6}deg)`;
+
+      if (distance < 0) {
+        clearInterval(timer);
+        document.getElementById("time").style.display = "none";
+        document.getElementById("finished").style.display = "block";
+      }
+    }, 1000);
+  </script>
+</section>
+
+<style define:vars={{ colorDays, colorHours, colorMinutes, colorSeconds }}>
+  .colorDays {
+    --color: var(--colorDays);
+  }
+
+  .colorHours {
+    --color: var(--colorHours);
+  }
+
+  .colorMinutes {
+    --color: var(--colorMinutes);
+  }
+
+  .colorSeconds {
+    --color: var(--colorSeconds);
+  }
+
+  .countdown_wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .circle,
+  .circle svg {
+    position: relative;
+    width: 150px;
+    height: 150px;
+  }
+
+  .circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .circle svg {
+    transform: rotate(270deg);
+  }
+
+  .circle svg circle {
+    width: 100%;
+    height: 100%;
+    fill: transparent;
+    stroke-width: 8;
+    stroke: #ffffff0f;
+    stroke-linecap: round;
+    transform: translate(5px, 5px);
+  }
+
+  .circle svg circle:nth-child(2) {
+    stroke: var(--color);
+    stroke-dasharray: 440;
+  }
+
+  .circle div {
+    position: absolute;
+    text-align: center;
+    font-weight: 500;
+    color: var(--color-gray-100);
+    font-size: 3rem;
+  }
+
+  :global(.circle div span) {
+    position: absolute;
+    transform: translateX(-50%) translateY(-5px);
+    font-size: 0.75rem;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+  }
+
+  .countdown_wrapper .dots {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 1000;
+  }
+
+  .countdown_wrapper .dots::before {
+    content: "";
+    position: absolute;
+    top: -3px;
+    width: 15px;
+    height: 15px;
+    background: var(--color);
+    border-radius: 50%;
+    box-shadow: 0 0 20px var(--color), 0 0 60px var(--color);
+  }
+
+  .countdown_finished {
+    font-size: 8rem;
+    font-weight: 500;
+    color: var(--color-gray-100);
+    text-align: center;
+    line-height: 0.8em;
+    display: none;
+  }
+
+  section {
+    padding: 0 1em;
+    background-color: var(--main-bg-color);
+    z-index: 1;
+  }
+
+  section h2 {
+    color: var(--color-gray-100);
+    font-size: 34px;
+    font-weight: 600;
+    line-height: 45px;
+    margin-top: 0;
+  }
+
+  @media (min-width: 720px) {
+    .countdown_wrapper {
+      flex-direction: row;
+    }
+  }
+
+  @media (min-width: 66rem) {
+    section {
+      grid-column: 1 / span 3;
+      display: grid;
+      grid-template-columns: 1fr 50rem 1fr;
+      padding: 0;
+    }
+    .wrapper {
+      grid-area: 1/2;
+    }
+  }
+
+  @media (min-width: 87rem) {
+    section {
+      grid-template-columns: 1fr 80rem 1fr;
+    }
+  }
+</style>
