@@ -4,6 +4,7 @@ import HeroImage from "@components/HeroImage.astro";
 import Description from "@components/Description.astro";
 import Table from "@components/Table.astro";
 import TableRow from "@components/TableRow.astro";
+import Countdown from "@components/Countdown.astro";
 import PlatformLink from "@components/PlatformLink.astro";
 
 import DescriptionPicture from "@components/DescriptionPicture.astro";
@@ -30,6 +31,19 @@ import image3 from "@assets/hyped/starfield/schdmk.jpg";
   minimal="true"
 >
   <HeroImage svg="starfield" />
+  <Countdown
+    message="Starfield has been released!"
+    colorDays="#b13a3b"
+    colorHours="#ca6c3e"
+    colorMinutes="#ccad67"
+    colorSeconds="#394b77"
+    year="2023"
+    month="09"
+    day="01"
+    hours="00"
+    minutes="00"
+    seconds="00"
+  />
   <Description>
     <p>
       Embark on a cosmic odyssey that defies the bounds of imagination in
