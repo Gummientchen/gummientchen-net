@@ -1,0 +1,175 @@
+---
+import Layout from "@layouts/Layout.astro";
+import HeroImage from "@components/HeroImage.astro";
+import Description from "@components/Description.astro";
+import Table from "@components/Table.astro";
+import TableRow from "@components/TableRow.astro";
+import PlatformLink from "@components/PlatformLink.astro";
+
+import DescriptionPicture from "@components/DescriptionPicture.astro";
+
+import image1 from "@assets/games/overwatch2/picture1.jpg";
+import image2 from "@assets/games/overwatch2/picture2.jpg";
+import image3 from "@assets/games/overwatch2/picture3.jpg";
+---
+
+<style>
+  :root {
+    --header-position-hue: 90%;
+  }
+</style>
+
+<Layout
+  title="Gummientchen - Overwatch 2"
+  description="Join Gummientchen on a gaming odyssey like no other. From dominating battlefields to unraveling epic quests, Gummientchen explores pixel realms, leaving no virtual stone unturned."
+  heading="Overwatch 2"
+  subheading="Working matchmacking? Never heard of that..."
+  minimal="true"
+>
+  <HeroImage svg="overwatch2" fill="true" />
+  <Table title="My Stats">
+    <TableRow component="Playtime">82 hours (27.02.2024)</TableRow>
+    <TableRow component="Platform">Steam</TableRow>
+    <TableRow component="Playing with">
+      <PlatformLink
+        linktext="SmashinVP"
+        linkhref="https://steamcommunity.com/id/SmashinVP"
+        iconname="steam"
+      /> /
+      <PlatformLink
+        linktext="lwt2"
+        linkhref="https://steamcommunity.com/id/lwt2"
+        iconname="steam"
+      /> /
+      <PlatformLink
+        linktext="Eas"
+        linkhref="https://steamcommunity.com/id/Eas_"
+        iconname="steam"
+      />
+      <br />
+      <PlatformLink
+        linktext="Ruvebo"
+        linkhref="https://steamcommunity.com/id/Ruvebo"
+        iconname="steam"
+      /> /
+      <PlatformLink
+        linktext="Raron"
+        linkhref="https://steamcommunity.com/id/raron1"
+        iconname="steam"
+      />
+      <!-- <PlatformLink
+        linktext="cloud"
+        linkhref="https://steamcommunity.com/id/cloud361"
+        iconname="steam"
+      /> -->
+    </TableRow>
+  </Table>
+  <Description>
+    <h3>Welcome to the World of Quackwatch… I mean, Overwatch 2!</h3>
+
+    <p>
+      Greetings fellow gamers, I'm Gummientchen – your resident rubber ducky
+      with an unquenchable thirst for thrilling team battles! If you've ever
+      wondered what it'd be like if a rubber ducky could blast lasers, freeze
+      enemies, and protect its team with unbreakable bubbles, then you're in the
+      right place. It's time to dive into the adrenaline-pumping world of
+      Overwatch 2!
+    </p>
+
+    <DescriptionPicture
+      src={image1}
+      alt="Kiriko using her Ult. Blizzard Entertainment, Inc."
+    />
+
+    <h3>What Kind of Duck Are We Talking About?</h3>
+
+    <p>
+      Overwatch 2 is a team-based hero shooter where you get to choose from a
+      whole flock of wacky and wonderful characters. Think armored gorillas,
+      time-traveling DJs, nanobot-wielding grandmas, and even a hamster in a
+      giant mech ball! No matter your playstyle, there's a hero (or duck) for
+      you. Imagine yourself as a shield-wielding knight protecting your flock of
+      teammates, a rocket-propelled duck dive-bombing the enemy, or even a
+      teleporting ducky appearing behind the foe for a surprise "HONK!" It's the
+      perfect blend of chaos, strategy, and pure fun.
+    </p>
+
+    <h3>So, What's It All About?</h3>
+
+    <p>
+      Picture this: two teams of quirky heroes battle it out across stunning
+      maps – from the neon-lit streets of Tokyo to the ancient temples of Nepal.
+      Your goal changes depending on the game mode! Sometimes you'll be quacking
+      your way to capture territory, other times escorting payloads, or simply
+      testing which team has the best aim for an epic duck-down. With tons of
+      different game modes, the excitement never stops!
+    </p>
+
+    <DescriptionPicture
+      src={image2}
+      alt="Esperanca Map. Blizzard Entertainment, Inc."
+    />
+
+    <p>
+      "But Gummientchen," you may ask, "how does a rubber ducky survive in this
+      world of laser beams and explosions?" Well, dear gamer, let me tell you
+      about Overwatch's secret weapon – teamwork! Every hero has unique powers,
+      and by waddling together, you'll unleash unstoppable combos. A well-timed
+      protective bubble can make all the difference, and with a little
+      coordination, you'll be raining down chaos on the unsuspecting enemy
+      flock!
+    </p>
+
+    <h3>Ready to Quack Some Action?</h3>
+
+    <p>
+      What sets Overwatch 2 apart is its constant evolution. New maps and heroes
+      keep the game fresh and exciting. And the best part? Overwatch 2 is free
+      to play! If you're looking for a team-based shooter that's bright,
+      cheerful, and packed with more action than you can shake a tail feather
+      at, then grab your goggles and let's dive in!
+    </p>
+
+    <DescriptionPicture
+      src={image3}
+      alt="Orisa throwing her spear. Blizzard Entertainment, Inc."
+    />
+
+    <h3>Some Duck-tastic Tips Before You Take the Plunge:</h3>
+
+    <p>
+      Don't be afraid to experiment and explore the roster of heroes to find
+      your feathery favorites. Communication with your team is key for those
+      quack-tastic victories! Remember to relax, take a deep breath, and think
+      back to being a stress-relieving rubber ducky – even the most chaotic
+      battles can be the most fun. Most importantly, remember it's just a game,
+      so have fun, make friends, and let those feathers fly!
+    </p>
+
+    <p>
+      I hope this little taste of Quackwatch has ruffled your feathers (in a
+      good way). Join me on the battlefield, and let's show the world that even
+      a rubber ducky can be a formidable hero!
+    </p>
+  </Description>
+  <Table title="Information about the Game">
+    <TableRow component="Developer">Blizzard Entertainment, Inc.</TableRow>
+    <TableRow component="Publisher">Blizzard Entertainment, Inc.</TableRow>
+    <TableRow component="Release Date">04.10.2022</TableRow>
+    <TableRow component="Genre">First-person shooter</TableRow>
+    <TableRow component="Official Website">
+      <PlatformLink
+        linktext="overwatch.blizzard.com"
+        linkhref="https://overwatch.blizzard.com/en-us/"
+        iconname=""
+      />
+    </TableRow>
+    <TableRow component="Steam Store Page">
+      <PlatformLink
+        linktext="Overwatch 2"
+        linkhref="https://store.steampowered.com/app/2357570/Overwatch_2/"
+        iconname="steam"
+      />
+    </TableRow>
+  </Table>
+</Layout>
