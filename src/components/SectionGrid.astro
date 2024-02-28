@@ -24,8 +24,8 @@ const { title } = Astro.props;
 
   section .cards {
     display: grid;
-    grid-template-columns: 1fr;
     grid-gap: 2em;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   }
   section h2 {
     color: var(--color-gray-100);
@@ -33,12 +33,6 @@ const { title } = Astro.props;
     font-weight: 600;
     line-height: 45px;
     margin-top: 0;
-  }
-
-  @media (min-width: 37rem) {
-    section .cards {
-      grid-template-columns: 1fr 1fr;
-    }
   }
 
   @media (min-width: 66rem) {
@@ -56,10 +50,6 @@ const { title } = Astro.props;
   @media (min-width: 87rem) {
     section {
       grid-template-columns: 1fr 80rem 1fr;
-    }
-
-    section .cards {
-      grid-template-columns: 1fr 1fr 1fr;
     }
   }
 </style>
