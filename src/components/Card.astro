@@ -4,6 +4,7 @@ export interface Props {
   gamertag?: string;
   description?: string;
   svg: string;
+  svgbackground: string;
   buttonhref?: string;
   buttonsuffix?: string;
   buttontarget?: string;
@@ -15,6 +16,7 @@ const {
   gamertag = false,
   description = false,
   svg,
+  svgbackground = "#000",
   buttonhref = false,
   buttonsuffix = "Profile",
   buttontarget = "_self",
@@ -28,10 +30,12 @@ const {
 
 const { default: svgtext } = await import(`../images/${svg}.svg?raw`);
 const { default: arrow } = await import("../images/arrow-right.svg?raw");
+
+const svgbackgroundcss = "background-color:" + svgbackground;
 ---
 
 <div class="card">
-  <div set:html={svgtext} transition:name={svg} />
+  <div style={svgbackgroundcss} set:html={svgtext} transition:name={svg} />
   <h2>
     {service}{gamertag && <span>: {gamertag}</span>}
   </h2>
@@ -74,5 +78,11 @@ const { default: arrow } = await import("../images/arrow-right.svg?raw");
     position: absolute;
     bottom: 0;
     left: 0;
+  }
+
+  .card div {
+    padding: 0;
+    margin: 0;
+    line-height: 0;
   }
 </style>
