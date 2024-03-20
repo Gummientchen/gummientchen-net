@@ -17,7 +17,8 @@ const { title } = Astro.props;
 
 <style>
   section {
-    padding: 0 1em;
+    padding-block: 1em;
+    padding-inline: 1em;
     background-color: var(--main-bg-color);
     z-index: 1;
   }
@@ -40,7 +41,8 @@ const { title } = Astro.props;
       grid-column: 1 / span 3;
       display: grid;
       grid-template-columns: 1fr 50rem 1fr;
-      padding: 0;
+      padding-inline: 0;
+      padding-block-end: 5em;
     }
     .wrapper {
       grid-area: 1/2;

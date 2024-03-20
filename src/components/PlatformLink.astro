@@ -1,5 +1,5 @@
 ---
-import { Icon } from "astro-icon";
+import { Icon } from 'astro-icon/components';
 
 export interface Props {
   iconname?: string;
@@ -7,7 +7,7 @@ export interface Props {
   linkhref: string;
 }
 
-const { iconname = "", linkhref } = Astro.props;
+const { iconname = '', linkhref } = Astro.props;
 let { linktext } = Astro.props;
 
 if (!linktext) {
@@ -16,7 +16,7 @@ if (!linktext) {
 ---
 
 {
-  iconname == "steam" && (
+  iconname == 'steam' && (
     <>
       <a href={linkhref} target="_blank" rel="noopener">
         {linktext}
@@ -27,7 +27,7 @@ if (!linktext) {
 }
 
 {
-  iconname == "xbox" && (
+  iconname == 'xbox' && (
     <>
       <a href={linkhref} target="_blank" rel="noopener">
         {linktext}
@@ -38,7 +38,7 @@ if (!linktext) {
 }
 
 {
-  iconname == "playstation" && (
+  iconname == 'playstation' && (
     <>
       <a href={linkhref} target="_blank" rel="noopener">
         {linktext}
@@ -49,7 +49,7 @@ if (!linktext) {
 }
 
 {
-  iconname == "riot" && (
+  iconname == 'riot' && (
     <>
       <a href={linkhref} target="_blank" rel="noopener">
         {linktext}
@@ -60,7 +60,7 @@ if (!linktext) {
 }
 
 {
-  iconname == "msstore" && (
+  iconname == 'msstore' && (
     <>
       <a href={linkhref} target="_blank" rel="noopener">
         {linktext}
@@ -71,7 +71,7 @@ if (!linktext) {
 }
 
 {
-  iconname == "twitch" && (
+  iconname == 'twitch' && (
     <>
       <a href={linkhref} target="_blank" rel="noopener">
         {linktext}
@@ -82,7 +82,7 @@ if (!linktext) {
 }
 
 {
-  iconname == "twitter" && (
+  iconname == 'twitter' && (
     <>
       <a href={linkhref} target="_blank" rel="noopener">
         {linktext}
@@ -93,7 +93,7 @@ if (!linktext) {
 }
 
 {
-  iconname == "youtube" && (
+  iconname == 'youtube' && (
     <>
       <a href={linkhref} target="_blank" rel="noopener">
         {linktext}
@@ -104,7 +104,7 @@ if (!linktext) {
 }
 
 {
-  iconname == "" && (
+  iconname == '' && (
     <>
       <a href={linkhref} target="_blank" rel="noopener">
         {linktext}
@@ -115,12 +115,12 @@ if (!linktext) {
 }
 
 <style>
-  [astro-icon] {
+  [data-icon] {
     width: 1.25em;
     height: 1.25em;
-    padding: 0 0.25em;
-    line-height: 1.25em;
-    vertical-align: middle;
+    padding-inline: 0.125em;
+    padding-block: 0;
+    vertical-align: top;
     display: inline-block;
     color: var(--color-gray-300);
   }

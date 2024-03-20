@@ -1,5 +1,5 @@
 ---
-import { Picture } from "@astrojs/image/components";
+import { Picture } from 'astro:assets';
 
 const { src, alt, ...attrs } = Astro.props;
 ---
@@ -7,8 +7,10 @@ const { src, alt, ...attrs } = Astro.props;
 <figure>
   <Picture
     src={src}
-    widths={[400, 800, 1200, 1800, 2500]}
-    sizes="(min-width: 87em) 80em, (min-width: 66em) 50em, (max-width: 66em) 100vw"
+    widths={[540, 820, 1280, src.width]}
+    formats={['avif', 'webp']}
+    inferSize
+    sizes="(max-width: 66em) 100vw, (min-width: 66em) 66em, (min-width: 87em) 87em"
     alt="{alt}"
     {...attrs}
   />
@@ -23,11 +25,5 @@ const { src, alt, ...attrs } = Astro.props;
 
   figcaption {
     font-size: 1rem;
-  }
-
-  img,
-  picture,
-  :global(img) {
-    max-width: 100%;
   }
 </style>
