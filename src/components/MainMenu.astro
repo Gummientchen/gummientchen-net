@@ -24,7 +24,7 @@ import logo from '@assets/logo.svg';
 <style>
   .main_menu_wrapper {
     grid-column: 1/-1;
-    background-color: var(--main-bg-color);
+    background-color: var(--main-menu-bg-color);
     position: sticky;
     top: 0;
     z-index: 9999;
@@ -45,10 +45,11 @@ import logo from '@assets/logo.svg';
       text-decoration: none;
       padding-block: 0.5rem;
       padding-inline: 0.75rem;
+      border-radius: 2px;
     }
 
     a:hover {
-      color: orange;
+      color: var(--link-hover-font-color);
       background-color: var(--link-hover-background-color);
     }
 
