@@ -1,0 +1,68 @@
+---
+import { Image } from 'astro:assets';
+
+import logo from '@assets/logo.svg';
+---
+
+<div class="main_menu_wrapper">
+  <div class="main_menu">
+    <h2>
+      <Image class="main_menu_logo" src={logo} alt="Gummientchen" />
+    </h2>
+    <nav>
+      <ul>
+        <li><a href="/#home">Home</a></li>
+        <li><a href="/#gamertags">Gamertags</a></li>
+        <li><a href="/#games">Games</a></li>
+        <li><a href="/#social">Social</a></li>
+        <li><a href="/#rig">Rig</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<style>
+  .main_menu_wrapper {
+    grid-column: 1/-1;
+    background-color: var(--main-bg-color);
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+  }
+
+  .main_menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 80%;
+    margin: auto;
+    justify-content: space-between;
+
+    a {
+      color: white;
+      font-weight: 400;
+      text-decoration: none;
+      padding-block: 0.5rem;
+      padding-inline: 0.75rem;
+    }
+
+    a:hover {
+      color: orange;
+      background-color: var(--link-hover-background-color);
+    }
+
+    ul {
+      display: flex;
+
+      li {
+        list-style-type: none;
+      }
+    }
+  }
+
+  .main_menu_logo {
+    height: 2rem;
+    width: auto;
+  }
+</style>

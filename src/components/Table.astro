@@ -2,13 +2,14 @@
 export interface Props {
   title: string;
   href?: string;
+  id?: string;
 }
 
-const { title = 'Rig', href = false } = Astro.props;
+const { title = 'Rig', href = false, id = '' } = Astro.props;
 const { default: arrow } = await import('../images/arrow-right.svg?raw');
 ---
 
-<section>
+<section id={id}>
   <div>
     <h2>{title}.</h2>
     <table>
@@ -25,57 +26,57 @@ const { default: arrow } = await import('../images/arrow-right.svg?raw');
       )
     }
   </div>
+
+  <style>
+    a.button {
+      margin-block: 1em;
+      margin-inline: 0;
+    }
+
+    a.button.bright {
+      color: var(--button-bright-color);
+      fill: var(--button-bright-color);
+    }
+    section {
+      background-color: var(--rig-background-color);
+      color: var(--rig-font-color);
+      font-weight: 300;
+      padding: 0 1em;
+      padding-block: 1em;
+    }
+    section h2 {
+      font-size: 45px;
+      line-height: 41px;
+      font-weight: 300;
+    }
+    section a {
+      color: var(--link-hover-font-color);
+      fill: var(--link-hover-font-color);
+      margin: 2em 0;
+    }
+
+    table {
+      width: 100%;
+      font-size: 1.25rem;
+    }
+
+    @media (min-width: 66rem) {
+      section {
+        grid-column: 1 / span 3;
+        display: grid;
+        grid-template-columns: 1fr 50rem 1fr;
+        padding-inline: 0;
+        z-index: 1;
+      }
+      section div {
+        grid-area: 1/2;
+      }
+    }
+
+    @media (min-width: 87rem) {
+      section {
+        grid-template-columns: 1fr 80rem 1fr;
+      }
+    }
+  </style>
 </section>
-
-<style>
-  a.button {
-    margin-block: 1em;
-    margin-inline: 0;
-  }
-
-  a.button.bright {
-    color: var(--button-bright-color);
-    fill: var(--button-bright-color);
-  }
-  section {
-    background-color: var(--rig-background-color);
-    color: var(--rig-font-color);
-    font-weight: 300;
-    padding: 0 1em;
-    padding-block: 1em;
-  }
-  section h2 {
-    font-size: 45px;
-    line-height: 41px;
-    font-weight: 300;
-  }
-  section a {
-    color: var(--link-hover-font-color);
-    fill: var(--link-hover-font-color);
-    margin: 2em 0;
-  }
-
-  table {
-    width: 100%;
-    font-size: 1.25rem;
-  }
-
-  @media (min-width: 66rem) {
-    section {
-      grid-column: 1 / span 3;
-      display: grid;
-      grid-template-columns: 1fr 50rem 1fr;
-      padding-inline: 0;
-      z-index: 1;
-    }
-    section div {
-      grid-area: 1/2;
-    }
-  }
-
-  @media (min-width: 87rem) {
-    section {
-      grid-template-columns: 1fr 80rem 1fr;
-    }
-  }
-</style>

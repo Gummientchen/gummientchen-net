@@ -1,9 +1,9 @@
 ---
-import Layout from "@layouts/Layout.astro";
-import SectionGrid from "@components/SectionGrid.astro";
-import Table from "@components/Table.astro";
-import TableRow from "@components/TableRow.astro";
-import Card from "@components/Card.astro";
+import Layout from '@layouts/Layout.astro';
+import SectionGrid from '@components/SectionGrid.astro';
+import Table from '@components/Table.astro';
+import TableRow from '@components/TableRow.astro';
+import Card from '@components/Card.astro';
 ---
 
 <Layout
@@ -12,7 +12,7 @@ import Card from "@components/Card.astro";
   heading="Gummientchen"
   subheading="Conquering Virtually Everything"
 >
-  <SectionGrid title="Gamertags" transition:animate="slide">
+  <SectionGrid title="Gamertags" id="gamertags" transition:animate="slide">
     <Card
       service="Steam"
       gamertag="Gummientchen"
@@ -68,7 +68,7 @@ import Card from "@components/Card.astro";
     />
   </SectionGrid>
 
-  <SectionGrid title="Games">
+  <SectionGrid title="Games" id="games">
     <!-- <Card
       service="CSGO"
       description="Bomb has been planted"
@@ -159,7 +159,7 @@ import Card from "@components/Card.astro";
     />
   </SectionGrid> -->
 
-  <SectionGrid title="Social">
+  <SectionGrid title="Social" id="social">
     <Card
       service="YouTube"
       gamertag="Gummientchen"
@@ -193,6 +193,7 @@ import Card from "@components/Card.astro";
   <Table
     title="Rig"
     href="https://pcpartpicker.com/user/Nycxin/saved/#view=Bm8rGX"
+    id="rig"
   >
     <TableRow component="CPU">AMD - Ryzen 9 7950X3D 5.7Ghz</TableRow>
     <TableRow component="GPU">

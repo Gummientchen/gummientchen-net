@@ -31,6 +31,7 @@ body {
   font-size: 16px;
   font-family: system-ui, sans-serif;
   background-color: var(--main-bg-color);
+  scroll-padding-top: 5rem;
 }
 .container {
   display: grid;
@@ -39,6 +40,7 @@ body {
   /* grid-gap: 3em 0; */
   padding-bottom: 3em;
   position: relative;
+  
 }
 
 .container > * + * {

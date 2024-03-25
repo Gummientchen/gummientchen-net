@@ -1,12 +1,13 @@
 ---
 export interface Props {
   title: string;
+  id: string;
 }
 
-const { title } = Astro.props;
+const { title, id } = Astro.props;
 ---
 
-<section>
+<section id={id}>
   <div class="wrapper">
     <h2>{title}.</h2>
     <div class="cards">
