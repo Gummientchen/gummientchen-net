@@ -1,5 +1,6 @@
 :root {
-  --main-bg-color: hsl(0, 0%, 10%);
+  --main-bg-color: #0E0E0E;
+  --main-menu-bg-color: #000;
 
   --color-gray-700: hsl(0, 0%, 5%);
   --color-gray-600: hsl(0, 0%, 15%);
