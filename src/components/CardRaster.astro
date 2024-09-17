@@ -28,7 +28,7 @@ const optimizedBackgroundImage = await getImage({ src: images[imageSource]() });
 ---
 
 <div
-  style={`background-color: ${svgbackground} ;aspect-ratio: 16/9; background-image: url(${optimizedBackgroundImage.src}); background-size: contain; background-repeat: no-repeat;`}
+  style={`background-color: ${svgbackground} ;aspect-ratio: 16/9; background-image: url(${optimizedBackgroundImage.src}); background-size: contain; background-repeat: no-repeat; background-position: center center;`}
   transition:name={src}
 >
 </div>
