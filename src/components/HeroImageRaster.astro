@@ -7,9 +7,15 @@ export interface Props {
   src: string;
   filetype?: string;
   background?: string;
+  aspectratio?: string;
 }
 
-const { src, filetype = "png", background = "transparent" } = Astro.props;
+const {
+  src,
+  filetype = "png",
+  background = "transparent",
+  aspectratio = "16/9",
+} = Astro.props;
 const imageSource = "/src/images/" + src + "." + filetype;
 
 const images = import.meta.glob<{ default: ImageMetadata }>(
@@ -30,7 +36,7 @@ const optimizedBackgroundImage = await getImage({ src: images[imageSource]() });
   <div class="wrapper">
     <div
       class="heroImage"
-      style={`aspect-ratio: 16/9; background-image: url(${optimizedBackgroundImage.src}); background-size: contain; background-repeat: no-repeat;`}
+      style={`aspect-ratio: ${aspectratio}; background-image: url(${optimizedBackgroundImage.src}); background-size: contain; background-repeat: no-repeat; background-position: center center;`}
       transition:name={src}
     >
     </div>
