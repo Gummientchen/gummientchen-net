@@ -14,7 +14,9 @@ import image2 from "@assets/games/satisfactory/picture2.jpg";
 
 <style>
   :root {
-    --header-position-hue: 90%;
+    --header-image-hue: 180deg;
+    --header-image-brightness: 0.4;
+    --header-image-saturation: 5;
   }
 </style>
 
@@ -25,7 +27,7 @@ import image2 from "@assets/games/satisfactory/picture2.jpg";
   subheading="I Can't Believe It's Not Factorio!"
   minimal="true"
 >
-  <HeroImageRaster src="satisfactory" filetype="webp" />
+  <HeroImageRaster src="satisfactory" filetype="webp" background="#e48c27" />
   <Table title="My Stats">
     <TableRow component="Playtime">298 hours (17.09.2024)</TableRow>
     <TableRow component="Platform">Steam</TableRow>
