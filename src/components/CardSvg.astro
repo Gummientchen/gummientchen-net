@@ -1,0 +1,21 @@
+---
+export interface Props {
+  svg: string;
+  svgbackground?: string;
+}
+
+const { svg, svgbackground = "#000" } = Astro.props;
+
+const { default: svgtext } = await import(`../images/${svg}.svg?raw`);
+const svgbackgroundcss = "background-color:" + svgbackground;
+---
+
+<div style={svgbackgroundcss} set:html={svgtext} transition:name={svg} />
+
+<style>
+  div {
+    padding: 0;
+    margin: 0;
+    line-height: 0;
+  }
+</style>
