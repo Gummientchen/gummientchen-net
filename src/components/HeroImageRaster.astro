@@ -1,0 +1,79 @@
+---
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+import { getImage } from "astro:assets";
+
+export interface Props {
+  src: string;
+  filetype: string;
+}
+
+const { src, filetype = "png" } = Astro.props;
+const imageSource = "/src/images/" + src + "." + filetype;
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/images/*.{jpeg,jpg,png,gif,webp,avif}"
+);
+if (!images[imageSource]) {
+  throw new Error(
+    `"${imageSource}" does not exist in glob: "src/images/*.{jpeg,jpg,png,gif,webp,avif}"`
+  );
+}
+
+const iSrc = images[imageSource]();
+
+const optimizedBackgroundImage = await getImage({ src: images[imageSource]() });
+---
+
+<section class="heroSection">
+  <div class="wrapper">
+    <div
+      class="heroImage"
+      style={`aspect-ratio: 16/9; background-image: url(${optimizedBackgroundImage.src}); background-size: contain; background-repeat: no-repeat;`}
+      transition:name={src}
+    >
+    </div>
+  </div>
+</section>
+
+<style>
+  section {
+    padding: 0 1em;
+    background-color: transparent;
+    z-index: 1;
+
+    /* padding-block-end: 0 !important; */
+  }
+
+  .wrapper {
+    /* position: relative; */
+    /* aspect-ratio: 32/9; */
+  }
+
+  .heroImage {
+    /* position: absolute; */
+    bottom: 0;
+    width: 100%;
+    /* background-color: var(--color-gray-700); */
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+
+  @media (min-width: 66rem) {
+    section {
+      grid-column: 1 / span 3;
+      display: grid;
+      grid-template-columns: 1fr 50rem 1fr;
+      padding: 0;
+    }
+    .wrapper {
+      grid-area: 1/2;
+    }
+  }
+
+  @media (min-width: 87rem) {
+    section {
+      grid-template-columns: 1fr 80rem 1fr;
+    }
+  }
+</style>
