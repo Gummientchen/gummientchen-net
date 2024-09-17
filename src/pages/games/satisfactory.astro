@@ -1,0 +1,147 @@
+---
+import Layout from "@layouts/Layout.astro";
+import HeroImageRaster from "@components/HeroImageRaster.astro";
+import Description from "@components/Description.astro";
+import Table from "@components/Table.astro";
+import TableRow from "@components/TableRow.astro";
+import PlatformLink from "@components/PlatformLink.astro";
+
+import DescriptionPicture from "@components/DescriptionPicture.astro";
+
+import image1 from "@assets/games/satisfactory/picture1.jpg";
+import image2 from "@assets/games/satisfactory/picture2.jpg";
+---
+
+<style>
+  :root {
+    --header-position-hue: 90%;
+  }
+</style>
+
+<Layout
+  title="Gummientchen - Satisfactory"
+  description="Join Gummientchen on a gaming odyssey like no other. From dominating battlefields to unraveling epic quests, Gummientchen explores pixel realms, leaving no virtual stone unturned."
+  heading="Satisfactory"
+  subheading="I Can't Believe It's Not Factorio!"
+  minimal="true"
+>
+  <HeroImageRaster src="satisfactory" filetype="webp" />
+  <Table title="My Stats">
+    <TableRow component="Playtime">298 hours (17.09.2024)</TableRow>
+    <TableRow component="Platform">Steam</TableRow>
+    <TableRow component="Playing with">
+      <PlatformLink
+        linktext="Ruvebo"
+        linkhref="https://steamcommunity.com/id/Ruvebo"
+        iconname="steam"
+      />
+    </TableRow>
+  </Table>
+  <Description>
+    <h3>Welcome to the Wild Frontier of Factory Building!</h3>
+
+    <p>
+      Ever dreamt of building a sprawling industrial empire on an alien world?
+      Satisfactory, the latest creation from the masterminds behind Goat
+      Simulator, invites you to unleash your inner engineer and conquer the
+      untamed wilderness of Massage-2(AB)b.
+    </p>
+
+    <h3>Construct, Conquer, Automate</h3>
+
+    <p>
+      Grab your hard hat and get ready to build! From humble beginnings, you'll
+      erect towering factories that defy gravity and logic, transforming the
+      alien landscape into a monument to human ingenuity. Design intricate
+      conveyor belt networks that weave through your creations like a
+      mesmerizing ballet of automation, transporting resources, components, and
+      even yourself with effortless efficiency.
+    </p>
+
+    <DescriptionPicture
+      src={image1}
+      alt="Train driving trough the expansive map."
+    />
+
+    <p>
+      Push the boundaries of productivity by overclocking buildings and
+      harnessing the power of elusive Power Slugs. Optimize every aspect of your
+      factory's performance, fine-tuning a symphony of machines that hum with
+      the rhythm of progress.
+    </p>
+
+    <h3>Explore and Exploit</h3>
+
+    <p>
+      This alien world is yours to discover! Embark on thrilling expeditions
+      through breathtaking vistas, encountering curious creatures like the
+      beloved Lizard Doggo along the way. Uncover hidden resources and unlock
+      the secrets of this untamed planet. Utilize trucks, trains, and other
+      vehicles to transport massive quantities of resources and expand your
+      reach across the vast landscape. And don't worry about pesky base defenses
+      - focus solely on building and exploring!
+    </p>
+
+    <DescriptionPicture src={image2} alt="Train leaving the station." />
+
+    <h3>Features That Will Ignite Your Imagination:</h3>
+    <ul>
+      <li>
+        <strong>Logistics Mastery:</strong> Master a variety of item and fluid transportation
+        systems, including conveyor belts, lifts, pipes, and more. Build a network
+        that rivals the circulatory system of a living organism, ensuring every resource
+        reaches its destination.
+      </li>
+      <li>
+        <strong>Automated Production:</strong> Build an army of machines to handle
+        every step of the production process, from mining raw materials to generating
+        the power that fuels your empire. Witness the satisfaction of a fully automated
+        factory humming along without a human touch.
+      </li>
+      <li>
+        <strong>Alien Wonderland:</strong> Explore a captivating world filled with
+        unique flora, fauna, and stunning scenery. Discover hidden wonders and breathtaking
+        vistas as you venture into the unknown.
+      </li>
+      <li>
+        <strong>Vehicle Variety:</strong> Traverse the terrain with an assortment
+        of vehicles designed for every need. From nimble trucks to powerful trains,
+        you'll have the tools to conquer any obstacle.
+      </li>
+    </ul>
+
+    <h3>Are you ready to leave your mark on this extraterrestrial frontier?</h3>
+
+    <p>
+      Join FICSIT Inc. and embark on an unforgettable journey of factory
+      building, exploration, and automation!
+    </p>
+  </Description>
+  <Table title="Information about the Game">
+    <TableRow component="Developer">Coffee Stain Studios</TableRow>
+    <TableRow component="Publisher"> Coffee Stain Publishing</TableRow>
+    <TableRow component="Release Date">10.09.2024</TableRow>
+    <TableRow component="Genre">Base Building</TableRow>
+    <TableRow component="Official Website">
+      <PlatformLink
+        linktext="satisfactorygame.com"
+        linkhref="https://www.satisfactorygame.com/"
+        iconname=""
+      />
+    </TableRow>
+    <TableRow component="Developer Website">
+      <PlatformLink
+        linktext="coffeestain.com"
+        linkhref="https://coffeestain.com/"
+        iconname=""
+      />
+    </TableRow>
+    <TableRow component="Steam Store Page">
+      <PlatformLink
+        linktext="Satisfactory"
+        linkhref="https://store.steampowered.com/app/526870/Satisfactory/"
+        iconname="steam"
+      />
+    </TableRow>
+  </Table>
+</Layout>
