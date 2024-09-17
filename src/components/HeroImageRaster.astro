@@ -5,10 +5,11 @@ import { getImage } from "astro:assets";
 
 export interface Props {
   src: string;
-  filetype: string;
+  filetype?: string;
+  background?: string;
 }
 
-const { src, filetype = "png" } = Astro.props;
+const { src, filetype = "png", background = "transparent" } = Astro.props;
 const imageSource = "/src/images/" + src + "." + filetype;
 
 const images = import.meta.glob<{ default: ImageMetadata }>(
@@ -25,7 +26,7 @@ const iSrc = images[imageSource]();
 const optimizedBackgroundImage = await getImage({ src: images[imageSource]() });
 ---
 
-<section class="heroSection">
+<section class="heroSection" style={`background-color: ${background}`}>
   <div class="wrapper">
     <div
       class="heroImage"
@@ -39,7 +40,6 @@ const optimizedBackgroundImage = await getImage({ src: images[imageSource]() });
 <style>
   section {
     padding: 0 1em;
-    background-color: transparent;
     z-index: 1;
 
     /* padding-block-end: 0 !important; */
